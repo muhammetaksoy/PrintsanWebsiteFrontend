@@ -1,12 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class slider extends Component {
-    render() {
-        return (
-            <div>
-                slider ekranı
-                sdgsdgsdgsdgdsg
-            </div>
-        )
-    }
+  render() {
+    return <div>slider ekranı sdgsdgsdgsdgds</div>;
+  }
 }
