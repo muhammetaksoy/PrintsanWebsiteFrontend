@@ -5,6 +5,7 @@ export default class slider extends Component {
         return (
             <div>
                 slider ekranı
+                sdgsdgsdgsdgdsg
             </div>
         )
     }
