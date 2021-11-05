@@ -1,5 +1,5 @@
 import "./App.css";
-import Header from "./Pages/Anasayfa/Components/Header";
+import Header from "./Pages/Anasayfa/Components/header";
 import Slider from "./Pages/Anasayfa/Components/Slider";
 
 function App() {
