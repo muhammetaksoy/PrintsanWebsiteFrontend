@@ -1,12 +1,14 @@
 import "./App.css";
 import Header from "./Pages/Anasayfa/Components/Header";
 import Slider from "./Pages/Anasayfa/Components/Slider";
+import Company from "./Pages/Anasayfa/Components/Company";
 
 function App() {
   return (
     <div>
-      <Header />
+      <Header/>
       <Slider />
+      <Company/>
     </div>
   );
 }

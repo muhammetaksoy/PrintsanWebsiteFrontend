@@ -1,0 +1,19 @@
+.section {
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.h2 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 60px;
+    margin-bottom: 20px;
+}
+
+.h3 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    line-height: 32px;
+    font-size: 24px;
+}
