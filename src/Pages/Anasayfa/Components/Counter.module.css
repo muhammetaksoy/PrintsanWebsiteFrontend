@@ -1,0 +1,10 @@
+.section {
+    padding: 60px 0;
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+
+.icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+}

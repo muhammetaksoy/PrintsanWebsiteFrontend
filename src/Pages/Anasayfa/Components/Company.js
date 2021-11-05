@@ -14,12 +14,14 @@ const Company = () => {
         
                     <div className="col-md-6">
                         <p>Printsan Emprime, 1994 yılından bu yana emprime parça baskı alanında hizmet vermektedir. 2006 yılında Beylikdüzü Organize Sanayi Bölgesindeki 4750 m2’lik tam otomasyonlu binada faaliyet göstermektedir. Günlük baskı kapasitesi 65.000 adet olup parça baskının haricinde gofre, enjeksiyon, frekans, flok, süblime ve taş üretimi yapmaktadır.</p>
+                        <ul className={classes.ul}>
+                            <li ><IoCheckmarkDone className={classes.icon}/>Deneyimli Kadro</li>
+                            <li><IoCheckmarkDone className={classes.icon}/>Kalite Ürünler</li>
+                            <li><IoCheckmarkDone className={classes.icon}/>Müşteri Memnuniyeti</li>
+                        </ul>
                         
-                        <span><IoCheckmarkDone/>Deneyimli Kadro</span>
-                        <li><i className="ri-check-double-line">Kaliteli Ürünler</i></li>
-                        <li><i className="ri-check-double-line">Müşteri Memnuniyeti</i></li>
                         
-                        <p>Deneyimli kadrosu, kaliteli, hızlı ve ekonomik tarzıyla sektörün lideri konumundaki firmalar arasındadır. Üretilen ürünün, kalite kontrolü yerine kalitenin üretilmesini benimseyen Printsan emprime sıfır hatayı hedeflemiştir.</p>
+                        <i>Deneyimli kadrosu, kaliteli, hızlı ve ekonomik tarzıyla sektörün lideri konumundaki firmalar arasındadır. Üretilen ürünün, kalite kontrolü yerine kalitenin üretilmesini benimseyen Printsan emprime sıfır hatayı hedeflemiştir.</i>
                     </div>
 
                 </div>
