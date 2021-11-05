@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+.carousel-item img{
+  height:937px !important;
+  
+}
+
+.nav-item{
+    font-size: 15px;
+    font-weight: 500;
+    color: #556270;
+    transition: 0.3s;
+}
+
+.dropdown-menu .dropdown-item{
+  color: #556270;
+  font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+
+}
+.dropdown-menu .dropdown-item:hover{
+  color: #d9232d;
+
+}
