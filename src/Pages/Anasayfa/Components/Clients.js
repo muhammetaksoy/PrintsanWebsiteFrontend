@@ -1,7 +1,7 @@
 import classes from './Clients.module.css';
 
 const Clients = () => {
-    let className = classes.img ;
+    let className = classes.img;
     return(
         <section className={classes.section}>
             <div className="container">
