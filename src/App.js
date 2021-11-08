@@ -5,6 +5,7 @@ import Company from "./Pages/Anasayfa/Components/Company";
 import Counter from "./Pages/Anasayfa/Components/Counter";
 import Clients from "./Pages/Anasayfa/Components/Clients";
 import Footer from "./Pages/Anasayfa/Components/Footer";
+import Vision from "./Pages/Anasayfa/Components/Vision";
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <Header />
       <Slider />
       <Company />
-      <Counter />
       <Clients />
+      <Vision/>
+      <Counter />
       <Footer />
     </div>
   );

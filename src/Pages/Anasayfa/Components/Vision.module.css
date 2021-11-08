@@ -1,0 +1,41 @@
+.services{
+    margin-top: 20px;
+}
+
+.iconBox {
+    margin-bottom: 20px;
+    padding: 30px;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+    height: 270px;
+}
+
+.icon {
+    float: left;
+    color: #d9232d;
+    font-size: 60px;
+}
+
+.h4 {
+    margin-left: 80px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.a {
+    color: #556270;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.a:hover{
+    color: #d9232d;
+    
+}
+
+.p {
+    margin-left: 80px;
+    line-height: 24px;
+    font-size: 14px;
+}

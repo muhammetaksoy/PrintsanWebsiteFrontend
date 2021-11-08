@@ -21,7 +21,7 @@ const Company = () => {
                         </ul>
                         
                         
-                        <i>Deneyimli kadrosu, kaliteli, hızlı ve ekonomik tarzıyla sektörün lideri konumundaki firmalar arasındadır. Üretilen ürünün, kalite kontrolü yerine kalitenin üretilmesini benimseyen Printsan emprime sıfır hatayı hedeflemiştir.</i>
+                        <i>Deneyimli kadrosu, kaliteli, hızlı ve ekonomik tarzıyla sektörün lideri konumundaki firmalar arasındadır. Üretilen ürünün, kalite kontrolü yerine kalitenin üretilmesini benimseyen Printsan emprime sıfır hatayı hedeflemiştir.Gelecek nesillere yaşanabilir bir çevre bırakmanın ancak bugün ki çabalarla mümkün olacağının bilincinde olan Printsan, üretimde çevreye ve insan sağlığına zararsız ekolojik ürünler kullanmaktadır. Bu anlamda Global Organik Textile Standard (GOST) ve Oeko-Teks Standard 100 sertifikalarını alarak doğaya ve insan sağlığına verdiği önemi göstermiştir.</i>
                     </div>
 
                 </div>
