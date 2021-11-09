@@ -6,7 +6,7 @@ const Clients = () => {
     return(
         <section className={classes.section}>
             <div className="container">
-
+                <h2 className={classes.h2}>REFERANSLAR</h2>
                 <div className="row">
                     
                     <div className="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
