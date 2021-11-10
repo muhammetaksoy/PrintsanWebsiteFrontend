@@ -1,6 +1,7 @@
 import classes from './Clients.module.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import styled from "styled-components";
 
 
 const Clients = () => {
@@ -23,6 +24,12 @@ const Clients = () => {
         }
     };
 
+    const StyledCarousel = styled(Carousel)`
+        li{
+            width:414px !important;
+        }
+    `;
+
     return (
         <section className={classes.section}>
 
@@ -31,8 +38,8 @@ const Clients = () => {
             <div className="container">
                 <h2 className={classes.h2}>REFERANSLAR</h2>
                 <div className="row">
-                    <Carousel
-                        className
+                    <StyledCarousel 
+                        
                         infinite={true}
                         responsive={responsive}
                         autoPlay={true}
@@ -58,7 +65,7 @@ const Clients = () => {
                             <img className={className} src={require("../../../images/client-6.png").default} alt="aaa" />
                         </div>
 
-                    </Carousel>
+                    </StyledCarousel>
 
 
                 </div>
