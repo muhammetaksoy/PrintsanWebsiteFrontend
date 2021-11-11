@@ -39,10 +39,10 @@ export default class Header extends Component {
                             </li>
 
                             <li className="nav-item me-4">
-                                <a className="nav-link ">Makina Parkuru</a>
+                                <a className="nav-link " href="#">Makina Parkuru</a>
                             </li>
                             <li className="nav-item me-4">
-                                <a className="nav-link ">Medya</a>
+                                <a className="nav-link " href="#">Medya</a>
                             </li>
                             <li className="nav-item me-4 dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -54,7 +54,7 @@ export default class Header extends Component {
                                 </ul>
                             </li>
                             <li className="nav-item me-4">
-                                <a className="nav-link bg-danger px-4 text-white rounded ">İletişim</a>
+                                <a className="nav-link " href="#">İletişim</a>
                             </li>
 
                         </ul>
