@@ -1,4 +1,6 @@
+import { Alert } from '@mui/material';
 import * as React from 'react';
+import { IoPlayCircle } from 'react-icons/io5';
 
 export default function Video() {
     return (
@@ -6,8 +8,14 @@ export default function Video() {
         <div className="container-fluid ">
             <div className="row m-4">
                 <div className="col-lg-6 col-md-6 col-6 d-flex align-items-center justify-content-center"
-                    style={{ backgroundColor: "#F8F9FA", fontSize: 38, fontStyle: "italic" }}>
-                    PRİNTSAN TANITIM VİDEOUSU
+                    style={{ backgroundColor: "#F8F9FA" }}>
+
+                    <Alert icon={false} variant="outlined" severity="error">
+
+                        <h2 style={{ fontSize: 40, fontStyle: "italic" }}>
+                            PRİNTSAN TANITIM VİDEOUSU
+                        </h2>
+                    </Alert>
                 </div>
                 <div className="col-lg-6 col-md-6 col-6 d-flex align-items-center justify-content-center">
                     <iframe
