@@ -12,7 +12,7 @@ export default class Slider extends Component {
                 <div className="carousel-inner">
 
                     <div className="carousel-item active">
-                        <img alt="deneme" src={require("../../../images/Slider4.jpeg").default} className="d-block w-100" />
+                        <img alt="deneme" src={require("../../../images/1.jpg").default} className="d-block w-100" />
                         <div className="carousel-caption d-flex h-100 align-items-center justify-content-center">
                             <div>
                                 <h1>Welcome To Printsan</h1>
@@ -22,7 +22,7 @@ export default class Slider extends Component {
                         </div>
                     </div>
                     <div className="carousel-item ">
-                        <img alt="deneme" src={require("../../../images/Slider1.jpeg").default} className="d-block w-100" />
+                        <img alt="deneme" src={require("../../../images/2.jpg").default} className="d-block w-100" />
                         <div className="carousel-caption d-flex h-100 align-items-center justify-content-center">
                             <div>
                                 <h1>Welcome To Printsan</h1>
@@ -33,7 +33,7 @@ export default class Slider extends Component {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img alt="deneme" src={require("../../../images/Slider2.jpeg").default} className="d-block w-100" />
+                        <img alt="deneme" src={require("../../../images/3.jpg").default} className="d-block w-100" />
                         <div className="carousel-caption d-flex h-100 align-items-center justify-content-center">
                             <div>
                                 <h1>Welcome To Printsan</h1>
@@ -42,17 +42,6 @@ export default class Slider extends Component {
 
                         </div>
                     </div>
-                    <div className="carousel-item">
-                        <img alt="deneme" src={require("../../../images/Slider3.jpeg").default} className="d-block w-100" />
-                        <div className="carousel-caption d-flex h-100 align-items-center justify-content-center">
-                            <div>
-                                <h1>Welcome To Printsan</h1>
-                                <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                            </div>
-
-                        </div>
-                    </div>
-
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
