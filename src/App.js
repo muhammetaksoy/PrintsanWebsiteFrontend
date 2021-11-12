@@ -8,6 +8,7 @@ import Footer from "./Pages/Anasayfa/Components/Footer";
 import Vision from "./Pages/Anasayfa/Components/Vision";
 import React from "react";
 import Video from "Pages/Anasayfa/Components/Video";
+import PopulerProducts from "Pages/Anasayfa/Components/PopulerProducts";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Clients />
       <Company />
       <Vision />
+      <PopulerProducts />
       <Counter />
       <Video />
       <Footer />
