@@ -2,6 +2,7 @@ import classes from './Clients.module.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import styled from "styled-components";
+import React from 'react';
 
 
 const Clients = () => {
@@ -33,13 +34,11 @@ const Clients = () => {
     return (
         <section className={classes.section}>
 
-
-
             <div className="container">
                 <h2 className={classes.h2}>REFERANSLAR</h2>
                 <div className="row">
-                    <StyledCarousel 
-                        
+                    <StyledCarousel
+
                         infinite={true}
                         responsive={responsive}
                         autoPlay={true}
