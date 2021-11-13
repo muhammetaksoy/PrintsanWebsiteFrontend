@@ -2,7 +2,9 @@ import React from 'react';
 import CountUp from 'react-countup';
 import classes from './Counter.module.css';
 import { IoHappyOutline,IoAccessibilityOutline,IoAnalyticsOutline } from "react-icons/io5";
+import { FaTshirt,FaChartLine,FaBlackTie,FaUsers } from "react-icons/fa";
 import VisibilitySensor from 'react-visibility-sensor';
+
 
 const Counter = () => {
    
@@ -11,7 +13,7 @@ const Counter = () => {
             <div className="container">
                 <div className="row text-center">
                     <div className="col-md-3">
-                        <IoAnalyticsOutline className={classes.icon}/>
+                        <FaTshirt className={classes.icon}/>
                         <h2><CountUp end={45000} duration={1.5}>
                             {({ countUpRef, start }) => (
                                 <VisibilitySensor onChange={start} delayedCall>
@@ -21,7 +23,7 @@ const Counter = () => {
                         <h3>GÜNLÜK ÜRETİM</h3>
                     </div>
                     <div className="col-md-3">
-                        <IoAnalyticsOutline className={classes.icon} />
+                        <FaChartLine className={classes.icon} />
                         <h2><CountUp end={1300000} duration={1.5} >
                                 {({ countUpRef, start }) => (
                                 <VisibilitySensor onChange={start} delayedCall>
@@ -32,7 +34,7 @@ const Counter = () => {
                         <h3>AYLIK ÜRETİM</h3>
                     </div>
                     <div className="col-md-3">
-                        <IoHappyOutline className={classes.icon}/>
+                        <FaBlackTie className={classes.icon}/>
                         <h2><CountUp end={200} duration={1.5}>
                             {({ countUpRef, start }) => (
                                 <VisibilitySensor onChange={start} delayedCall>
@@ -42,7 +44,7 @@ const Counter = () => {
                         <h3>ANLAŞMALI MARKA</h3>
                     </div>
                     <div className="col-md-3">
-                        <IoAccessibilityOutline className={classes.icon}/>
+                        <FaUsers className={classes.icon}/>
                         <h2><CountUp end={50} duration={1.5}>
                             {({ countUpRef, start }) => (
                                 <VisibilitySensor onChange={start} delayedCall>

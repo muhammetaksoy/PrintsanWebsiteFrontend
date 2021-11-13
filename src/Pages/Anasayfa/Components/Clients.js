@@ -10,7 +10,7 @@ const Clients = () => {
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 3,
+            items: 4,
             slidesToSlide: 1 // optional, default to 1.
         },
         tablet: {
@@ -29,38 +29,43 @@ const Clients = () => {
         li{
             width:414px !important;
         }
+        ul {
+            align-items: center !important;
+        }
     `;
 
     return (
-        <section className={classes.section}>
+        <div>
+            <h2 className={classes.h2}>REFERANSLAR</h2>
+            <section className={classes.section}>
 
-            <div className="container">
-                <h2 className={classes.h2}>REFERANSLAR</h2>
-                <div className="row">
+            <div className="container-fluid " style={{"width":"85%"}}>
+                
+                <div className="row mx-auto">
                     <StyledCarousel
-
+                        
                         infinite={true}
                         responsive={responsive}
                         autoPlay={true}
                         removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
                     >
-
-                        <div className="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                        
+                        <div className="col-lg-2 col-md-4 col-6 ">
                             <img className={className} src={require("../../../images/client-1.png").default} alt="aaa" />
                         </div>
-                        <div className="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                        <div className="col-lg-2 col-md-4 col-6 ">
                             <img className={className} src={require("../../../images/client-2.png").default} alt="aaa" />
                         </div>
-                        <div className="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                        <div className="col-lg-2 col-md-4 col-6 ">
                             <img className={className} src={require("../../../images/client-3.png").default} alt="aaa" />
                         </div>
-                        <div className="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                        <div className="col-lg-2 col-md-4 col-6 ">
                             <img className={className} src={require("../../../images/client-4.png").default} alt="aaa" />
                         </div>
-                        <div className="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                        <div className="col-lg-2 col-md-4 col-6 ">
                             <img className={className} src={require("../../../images/client-5.png").default} alt="aaa" />
                         </div>
-                        <div className="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                        <div className="col-lg-2 col-md-4 col-6 ">
                             <img className={className} src={require("../../../images/client-6.png").default} alt="aaa" />
                         </div>
 
@@ -71,6 +76,8 @@ const Clients = () => {
 
             </div>
         </section>
+        </div>
+        
     )
 }
 export default Clients;

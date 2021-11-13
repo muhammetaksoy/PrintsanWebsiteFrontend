@@ -21,7 +21,10 @@
 
 .h2 {
     font-family: 'Courgette', cursive;
-    color: #d9232d;
+    font-weight: bold;
+    color: #fa0808;
     font-size: 38px;
+    text-align: center;
+    margin-top: 16px;
 }
 

@@ -1,29 +1,30 @@
+import {Routes,Route} from "react-router-dom";
 import "./App.css";
 import Header from "./Pages/Anasayfa/Components/Header";
-import Slider from "./Pages/Anasayfa/Components/Slider";
-import Company from "./Pages/Anasayfa/Components/Company";
-import Counter from "./Pages/Anasayfa/Components/Counter";
-import Clients from "./Pages/Anasayfa/Components/Clients";
 import Footer from "./Pages/Anasayfa/Components/Footer";
-import Vision from "./Pages/Anasayfa/Components/Vision";
 import React from "react";
-import Video from "Pages/Anasayfa/Components/Video";
-import PopulerProducts from "Pages/Anasayfa/Components/PopulerProducts";
+import Anasayfa from "Pages/Anasayfa/Anasayfa";
+import AboutUs from "Pages/SirketProfili/AboutUs";
+import NotFound from "Pages/NotFound/NotFound";
+import Politics from "Pages/SirketProfili/Politics";
+import Team from "Pages/SirketProfili/Team";
+
 
 function App() {
   return (
-    <div>
+    <React.Fragment>
       <Header />
-      <Slider />
-      <Clients />
-      <Company />
-      <Vision />
-      <PopulerProducts />
-      <Counter />
-      <Video />
+      <Routes>
+        <Route path="*" element={<NotFound/>}/>
+        <Route path="/" element={<Anasayfa/>} />
+        <Route path="Anasayfa" element={<Anasayfa />} />
+        <Route path="Hakkimizda" element={<AboutUs />} />
+        <Route path="Politikalar" element={<Politics />} />
+        <Route path="Ekip" element={<Team />} />
+      </Routes> 
       <Footer />
 
-    </div>
+    </React.Fragment>
   );
 }
 

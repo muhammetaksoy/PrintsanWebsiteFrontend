@@ -1,6 +1,5 @@
 import { Alert } from '@mui/material';
 import * as React from 'react';
-import { IoPlayCircle } from 'react-icons/io5';
 
 export default function Video() {
     return (

@@ -1,0 +1,9 @@
+.bg{
+    background-color: white;
+    opacity: 0.7;
+    padding: 10px;
+    border-radius: 15px;
+    color: black;
+    font-weight: 700;
+    font-size: 24px;
+}
