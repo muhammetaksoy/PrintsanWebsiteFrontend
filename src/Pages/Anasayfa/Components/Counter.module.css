@@ -2,9 +2,15 @@
     padding: 60px 0;
     overflow: hidden;
     background-color: #f8f9fa;
+    background-image: url("../../../images/counter.jpg");
 }
 
 .icon {
     font-size: 60px;
     margin-bottom: 15px;
+    color: #d9232d;
+}
+
+.color {
+    color: #d9232d;
 }
