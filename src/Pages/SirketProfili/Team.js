@@ -4,10 +4,10 @@ export default class Team extends Component {
     render() {
         return (
             <div>
-                <h1 className="text-center mb-3 alert alert-danger border-0 rounded-0 ">Ekip</h1>
+                <h1 className="text-center p-1 alert alert-danger border-0 rounded-0 ">Ekip</h1>
                 <section id="team" className={classes.section}>
 
-                    <div className="container-fluid w-75">
+                    <div className="container-fluid  " style={{ 'width': '60%' }}>
                         <div className="row ">
                             <div className="col-lg-6 ">
                                 <div className={`${classes.member} d-flex align-items-center`}>

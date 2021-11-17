@@ -22,7 +22,7 @@ export default class Header extends Component {
                                     <li><Link to="/Hakkimizda" className="dropdown-item">Hakkımızda</Link></li>
                                     <li><Link to="/Politikalar" className="dropdown-item">Politikalar</Link></li>
                                     <li><Link to="/Ekip" className="dropdown-item">Ekip</Link></li>
-                                    
+
                                 </ul>
                             </li>
                             <li className="nav-item me-4">

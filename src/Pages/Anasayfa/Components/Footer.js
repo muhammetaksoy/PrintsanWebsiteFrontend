@@ -4,7 +4,7 @@ import { IoLogoFacebook, IoLogoInstagram, IoLogoYoutube } from "react-icons/io5"
 import React from "react";
 const Footer = () => {
     return (
-        <footer className={classes.footer}>
+        <footer className={classes.footer} >
             <div className={classes.footerTop}>
                 <div className="container">
 
