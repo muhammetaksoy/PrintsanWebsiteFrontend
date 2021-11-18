@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import classes from './Header.module.css';
 export default class Header extends Component {
     render() {
         return (
-            <nav className="navbar navbar-expand-lg navbar-light bg-light p-3 ">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light p-2 ">
                 <div className="container-fluid w-75 ">
                     <a className="navbar-brand" style={{ color: "#556270", fontWeight: "bold", fontSize: "28px" }} href="#">Printsan</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

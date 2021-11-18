@@ -4,7 +4,7 @@ export default class Team extends Component {
     render() {
         return (
             <div>
-                <h1 className="text-center p-1 alert alert-danger border-0 rounded-0 ">Ekip</h1>
+                <h2 className="text-center p-2 alert alert-danger border-0 rounded-0 ">Ekip</h2>
                 <section id="team" className={classes.section}>
 
                     <div className="container-fluid  " style={{ 'width': '60%' }}>
