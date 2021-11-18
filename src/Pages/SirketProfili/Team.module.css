@@ -4,10 +4,9 @@
 }
 
 .member{
-        position: relative;
         box-shadow: 0px 2px 15px rgb(85 98 112 / 8%);
-        padding: 30px;
-        border-radius: 4px;
+        padding:20px;
+        border-radius:5px;
         background: white;
 }
 
@@ -18,7 +17,8 @@
 }
 
 .pic img{
-    height:140px;
+    height:150px;
+
 }
 
 .social {

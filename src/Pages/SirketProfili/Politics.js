@@ -45,9 +45,10 @@ export default function Politics() {
         setValue(newValue);
     };
     return (
-        <div>
-            <h2 className="text-center p-2 alert alert-danger border-0 rounded-0 ">Politikalar</h2>
-            <Box className="container-fluid w-50 my-5" >
+        <div >
+
+            <Box className="container-fluid  my-5" style={{ "width": "85%" }} >
+                <h2 className="text-center p-2 alert alert-danger border-0 rounded-0 ">Politikalar</h2>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
                         <Tab label="Çerez Politikası" {...a11yProps(0)} />
