@@ -1,7 +1,12 @@
 .section {
-    padding: 60px 0 210px 0;
+    padding: 60px 0;
 }
 .section p {
     margin-top: 10px;
     font-size: 20px;
+}
+.img {
+    width: 300px;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
