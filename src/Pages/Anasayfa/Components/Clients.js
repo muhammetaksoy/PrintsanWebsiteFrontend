@@ -1,12 +1,26 @@
+import React,{useEffect, useState} from 'react';
 import classes from './Clients.module.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import styled from "styled-components";
-import React from 'react';
+
 
 
 const Clients = () => {
-    let className = classes.img;
+    const [images, setImages] = useState([]);
+    useEffect(() => {
+        fetch("http://printsanaccess.online/api/Explore/GetReferences")
+            .then((response) => response.json())
+            .then(response => setImages(response))
+    },[]);
+
+    const referances = images.map(item => (
+        <div className="col-lg-2 col-md-4 col-6 ">
+            <img className={classes.img} src={item.PhotoUrl} alt="aaa" />
+        </div>
+    ))
+    
+    
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
@@ -50,24 +64,7 @@ const Clients = () => {
                         removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
                     >
                         
-                        <div className="col-lg-2 col-md-4 col-6 ">
-                            <img className={className} src={require("../../../images/client-1.png").default} alt="aaa" />
-                        </div>
-                        <div className="col-lg-2 col-md-4 col-6 ">
-                            <img className={className} src={require("../../../images/client-2.png").default} alt="aaa" />
-                        </div>
-                        <div className="col-lg-2 col-md-4 col-6 ">
-                            <img className={className} src={require("../../../images/client-3.png").default} alt="aaa" />
-                        </div>
-                        <div className="col-lg-2 col-md-4 col-6 ">
-                            <img className={className} src={require("../../../images/client-4.png").default} alt="aaa" />
-                        </div>
-                        <div className="col-lg-2 col-md-4 col-6 ">
-                            <img className={className} src={require("../../../images/client-5.png").default} alt="aaa" />
-                        </div>
-                        <div className="col-lg-2 col-md-4 col-6 ">
-                            <img className={className} src={require("../../../images/client-6.png").default} alt="aaa" />
-                        </div>
+                        {referances}
 
                     </StyledCarousel>
 

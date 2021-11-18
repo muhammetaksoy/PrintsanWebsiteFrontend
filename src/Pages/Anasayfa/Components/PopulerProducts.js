@@ -7,7 +7,7 @@ const PopulerProducts = () => {
             .then((response) => response.json())
             .then(response => setProducts(response))
     },[]);
-    console.log(products)
+    
     const populerProducts = products.map(item => (
         <ProductCart key={item.ProductId}  id={item.ProductId} image={item.PhotoUrlMain} categoryName={item.CategoryName} />
         
@@ -16,7 +16,7 @@ const PopulerProducts = () => {
     return(
         
         <section id="portfolio" className="portfolio">
-            <div className="container">
+            <div className="container" >
                 <div className="row portfolio-container">
                     {populerProducts}
                 </div>
