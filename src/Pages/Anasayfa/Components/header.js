@@ -27,7 +27,7 @@ export default class Header extends Component {
                                 </ul>
                             </li>
                             <li className="nav-item me-4">
-                                <a className="nav-link" href="#">Ürünler</a>
+                                <Link to="/Urunler" className="nav-link " aria-current="page">Ürünler</Link>
                             </li>
                             <li className="nav-item me-4 dropdown">
                                 <a className="nav-link" href="#">
