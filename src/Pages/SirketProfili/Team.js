@@ -6,7 +6,7 @@ export default class Team extends Component {
             <div>
 
                 <section id="team" className={classes.section}>
-                    <h2 className="text-center container-fluid  p-2 alert alert-danger border-0 rounded-0 " style={{ "width": "85%" }}>Ekip</h2>
+                    <h2 className="text-center container-fluid  p-2 alert alert-danger border-0 rounded-0 " style={{ "width": "85%","fontSize": "2.8rem" }}>Ekip</h2>
                     <div className="container-fluid" style={{ "width": "85%" }}>
 
                         <div className="row ">

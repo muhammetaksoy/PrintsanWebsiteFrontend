@@ -13,12 +13,12 @@ export default function Politics() {
     const politicsAll = politics.map(item => (
         <tr>
             <td>{item.Header}</td>
-            <td><a className="text-decoration-none text-danger" href={item.PDFUrl} target="_blank">PDF</a></td>
+            <td><a className="text-decoration-none text-danger" href={item.PDFUrl} target="_blank" rel="noreferrer">PDF</a></td>
         </tr>
     ))
     return (
         <section style={{ padding: "40px 0px", overflow: "hidden" }}>
-            <h2 className="text-center container-fluid  p-2 alert alert-danger border-0 rounded-0 " style={{ "width": "85%" }}>Politikalar</h2>
+            <h2 className="text-center container-fluid  p-2 alert alert-danger border-0 rounded-0 " style={{ "width": "85%","fontSize": "2.8rem" }}>Politikalar</h2>
             <div className="container-fluid" style={{ "width": "85%" }}>
                 <table className="table table-hover">
                     <thead>
