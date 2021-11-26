@@ -22,7 +22,7 @@ const AboutUs = () => {
         <section className={classes.section} >
             <div className="container-fluid" style={{ "width": "85%"}}>
                 <div className="row">
-                    <h2 className="text-center p-2 alert alert-danger border-0 rounded-0 " style={{"fontSize": "2.8rem" }}>Hakkımızda</h2>
+                    <h2 className="text-center p-2 alert alert-danger border-0 rounded-0 " style={{"fontSize": "2.8rem","marginBottom": "30px" }}>Hakkımızda</h2>
                     <p>Printsan Emprime, 1994 yılından bu yana emprime parça baskıalanında hizmet vermektedir. 2006 yılında Beylikdüzü Organize Sanayi Bölgesindeki 4750 m2’lik tam otomasyonlu binada faaliyet göstermektedir.
                         Günlük baskı kapasitesi 65.000 adet olup parça baskının haricinde gofre, enjeksiyon, frekans, flok, süblime ve taş üretimi yapmaktadır.</p>
                     <p>Deneyimli kadrosu, kaliteli, hızlı ve ekonomik tarzıyla sektörün lideri konumundaki firmalar arasındadır.
