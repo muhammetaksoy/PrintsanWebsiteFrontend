@@ -16,7 +16,7 @@ export default function Products() {
         <div>
             <div className="card border-0" >
                 <div className={classes.wrap}>
-                    <img id="img" className={classes.img} src={item.PhotoUrlMain} alt="Card image cap" />
+                    <img className={classes.img} src={item.PhotoUrlMain} alt="Card cap" onMouseEnter={e => item.PhotoUrlFocused ? e.currentTarget.src = item.PhotoUrlFocused : e.currentTarget.src = item.PhotoUrlMain} onMouseLeave={e => e.currentTarget.src = item.PhotoUrlMain} />
                     <div className="card-body">
                         <h5 className="card-title text-center text-danger">{item.CategoryName}</h5>
                     </div>
@@ -29,7 +29,7 @@ export default function Products() {
 
     return (
         <section style={{ padding: "40px 0px", overflow: "hidden" }}>
-            <h2 className="text-center container-fluid  p-2 alert alert-danger border-0 rounded-0 " style={{ "width": "85%" }}>Ürünler</h2>
+            <h2 className="text-center container-fluid  p-2 alert alert-danger border-0 rounded-0 " style={{ "width": "85%", "fontSize": "2.8rem" }}>Ürünler</h2>
             <div className="container-fluid " style={{ 'width': "85%" }} >
                 <div className="d-flex justify-content-between flex-wrap ">
                     {productsAll}

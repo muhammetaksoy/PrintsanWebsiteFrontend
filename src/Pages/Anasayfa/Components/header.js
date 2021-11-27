@@ -1,7 +1,6 @@
 import { height } from '@mui/system';
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import classes from './Header.module.css';
 export default class Header extends Component {
     render() {
         return (
@@ -31,9 +30,7 @@ export default class Header extends Component {
                                 <Link to="/Urunler" className="nav-link " aria-current="page">Ürünler</Link>
                             </li>
                             <li className="nav-item me-4 dropdown">
-                                <a className="nav-link" href="#">
-                                    Üretim
-                                </a>
+                                <Link to="/Uretim" className="nav-link " aria-current="page">Üretim</Link>
                             </li>
 
                             <li className="nav-item me-4">

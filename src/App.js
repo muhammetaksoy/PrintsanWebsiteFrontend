@@ -9,6 +9,7 @@ import NotFound from "Pages/NotFound/NotFound";
 import Politics from "Pages/SirketProfili/Politics";
 import Team from "Pages/SirketProfili/Team";
 import Products from "Pages/SirketProfili/Products";
+import Process from "Pages/Process";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="Politikalar" element={<Politics />} />
         <Route path="Ekip" element={<Team />} />
         <Route path="Urunler" element={<Products />} />
+        <Route path="Uretim" element={<Process />} />
       </Routes>
       <Footer />
 

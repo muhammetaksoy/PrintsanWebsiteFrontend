@@ -20,9 +20,9 @@
 }
 
 .h2 {
-    font-family: 'Courgette', cursive;
+    /* font-family: 'Courgette', cursive; */
     font-weight: bold;
-    color: #fa0808;
+    /* color: #fa0808; */
     font-size: 38px;
     text-align: center;
     margin-top: 16px;
