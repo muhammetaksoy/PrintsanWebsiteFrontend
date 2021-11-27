@@ -20,14 +20,14 @@ const Process = () => {
             </div>
             <div className={classes.box}>
                 <img
-                src={require("../../src/images/Desen.jpg").default}
+                src={require("../../../src/images/Desen.jpg").default}
                 alt="Desen bölümü"
                 className={classes.img}
                 />
             </div>
             <div className={classes.box}>
                 <img
-                src={require("../../src/images/Kalıphane.png").default}
+                src={require("../../../src/images/Kalıphane.png").default}
                 alt="Kalıphane"
                 className={classes.img}
                 />
@@ -59,7 +59,7 @@ const Process = () => {
 
             <div className={classes.box}>
                 <img
-                src={require("../../src/images/Boyahane.jpg").default}
+                src={require("../../../src/images/Boyahane.jpg").default}
                 alt="Boyahane"
                 className={classes.img}
                 />
@@ -67,7 +67,7 @@ const Process = () => {
 
             <div className={classes.box}>
                 <img
-                src={require("../../src/images/Numune.jpg").default}
+                src={require("../../../src/images/Numune.jpg").default}
                 alt="Numune"
                 className={classes.img}
                 />
@@ -94,7 +94,7 @@ const Process = () => {
 
             <div className={classes.box}>
                 <img
-                src={require("../../src/images/Boyahane.jpg").default}
+                src={require("../../../src/images/Boyahane.jpg").default}
                 alt="Boyahane"
                 className={classes.img}
                 />
@@ -102,7 +102,7 @@ const Process = () => {
 
             <div className={classes.box}>
                 <img
-                src={require("../../src/images/Imalat.jpg").default}
+                src={require("../../../src/images/Imalat.jpg").default}
                 alt="Imalat"
                 className={classes.img}
                 />
@@ -133,7 +133,7 @@ const Process = () => {
 
             <div className={classes.box}>
                 <img
-                src={require("../../src/images/Kalitekontrol.png").default}
+                src={require("../../../src/images/Kalitekontrol.png").default}
                 alt="Kalite Kontrol"
                 className={classes.img}
                 />
@@ -141,7 +141,7 @@ const Process = () => {
 
             <div className={classes.box}>
                 <img
-                src={require("../../src/images/Imalat.jpg").default}
+                src={require("../../../src/images/Imalat.jpg").default}
                 alt="Imalat"
                 className={classes.img}
                 />
@@ -170,7 +170,7 @@ const Process = () => {
 
             <div className={classes.box}>
                 <img
-                src={require("../../src/images/Labaratuvar.jpg").default}
+                src={require("../../../src/images/Labaratuvar.jpg").default}
                 alt="Labaratuvar"
                 className={classes.img}
                 />

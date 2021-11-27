@@ -9,7 +9,8 @@ import NotFound from "Pages/NotFound/NotFound";
 import Politics from "Pages/SirketProfili/Politics";
 import Team from "Pages/SirketProfili/Team";
 import Products from "Pages/SirketProfili/Products";
-import Process from "Pages/Process";
+import Process from "Pages/Process/Process";
+import Contact from "Pages/Contact/Contact";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="Ekip" element={<Team />} />
         <Route path="Urunler" element={<Products />} />
         <Route path="Uretim" element={<Process />} />
+        <Route path="Iletisim" element={<Contact />} />
       </Routes>
       <Footer />
 
