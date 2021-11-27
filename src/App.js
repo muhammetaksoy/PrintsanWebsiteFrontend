@@ -11,6 +11,8 @@ import Team from "Pages/SirketProfili/Team";
 import Products from "Pages/SirketProfili/Products";
 import Process from "Pages/Process/Process";
 import Contact from "Pages/Contact/Contact";
+import MachineParkour from "Pages/MakinaParkuru/MachineParkour";
+import Media from "Pages/Medya/Media";
 
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
         <Route path="Ekip" element={<Team />} />
         <Route path="Urunler" element={<Products />} />
         <Route path="Uretim" element={<Process />} />
+        <Route path="MakinaParkuru" element={<MachineParkour />} />
+        <Route path="Medya" element={<Media />} />
         <Route path="Iletisim" element={<Contact />} />
       </Routes>
       <Footer />

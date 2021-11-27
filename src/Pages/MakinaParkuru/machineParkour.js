@@ -1,7 +1,15 @@
-import React from 'react';
-import classes from './machineParkour.module.css';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+import classes from './MachineParkour.module.css';
 
-const machineParkour = () => {
+const MachineParkour = () => {
+    const [parkurs, setParkurs] = useState([]);
+    useEffect(() => {
+        fetch("http://printsanaccess.online/api/Explore/GetMachineParkours")
+            .then((response) => response.json())
+            .then(response => setParkurs(response))
+    }, []);
+
     return (
         <section className={classes.section}>
 
@@ -9,4 +17,4 @@ const machineParkour = () => {
     )
 
 }
-export default machineParkour;
+export default MachineParkour;
