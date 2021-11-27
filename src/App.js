@@ -8,11 +8,11 @@ import AboutUs from "Pages/SirketProfili/AboutUs";
 import NotFound from "Pages/NotFound/NotFound";
 import Politics from "Pages/SirketProfili/Politics";
 import Team from "Pages/SirketProfili/Team";
-import Products from "Pages/SirketProfili/Products";
 import Process from "Pages/Process/Process";
 import Contact from "Pages/Contact/Contact";
 import MachineParkour from "Pages/MakinaParkuru/MachineParkour";
 import Media from "Pages/Medya/Media";
+import Products from "Pages/Urunler/Products";
 
 
 function App() {
