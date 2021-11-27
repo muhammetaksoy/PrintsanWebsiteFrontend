@@ -5,6 +5,7 @@ import { useState } from 'react';
 import ModalVideo from 'react-modal-video'
 import 'react-modal-video/css/modal-video.css';
 import { FaPlayCircle } from "react-icons/fa";
+import classes from './Video.module.css';
 
 export default function Video() {
     const [isOpen, setOpen] = useState(false)
@@ -18,7 +19,7 @@ export default function Video() {
 
                     <div style={{ textAlign: "center", "height": "100%", display: "flex", justifyContent: "center", "alignItems": "center" }}>
                         <p style={{ fontSize: 40, }}>
-                            PRİNTSAN TANITIM
+                            SANAL TUR
                         </p>
                     </div>
                 </div>
@@ -26,7 +27,7 @@ export default function Video() {
                     <div style={{ textAlign: "center", "height": "100%", display: "flex", justifyContent: "center", "alignItems": "center" }}>
                         <React.Fragment>
                             <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="j-6I5VhjY2U" onClose={() => setOpen(false)} />
-                            <FaPlayCircle onClick={() => setOpen(true)} style={{ fontSize: "120", color: "#d9232d" }} />
+                            <FaPlayCircle className={classes.pointer} onClick={() => setOpen(true)} style={{ fontSize: "120", color: "#d9232d" }} />
                         </React.Fragment>
 
                     </div>
