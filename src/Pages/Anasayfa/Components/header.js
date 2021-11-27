@@ -48,7 +48,7 @@ export default class Header extends Component {
                                 </ul>
                             </li>
                             <li className="nav-item me-4">
-                                <a className="nav-link " href="#">İletişim</a>
+                            <Link to="/Iletisim" className="nav-link " aria-current="page">İletişim</Link>
                             </li>
 
                         </ul>
