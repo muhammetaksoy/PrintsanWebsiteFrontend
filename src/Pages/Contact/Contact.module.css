@@ -1,0 +1,57 @@
+.section {
+    padding: 40px 0;
+}
+
+.form {
+    margin-left: 100px;
+}
+
+.icon {
+    padding: 8px;
+    height: 40px;
+    width: 40px;
+    float: left;
+    background: #edeff1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+.icon:hover {
+    background: #556270;
+    color: #fff;
+}
+
+.h4 {
+    padding: 0 0 0 60px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #556270;
+}
+
+.p{
+    padding: 0 0 0 60px;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #8795a4;
+}
+
+.email {
+    margin-top: 40px;
+}
+
+.phone {
+    margin-top: 40px;
+}
+button {
+    background: #d9232d;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 4px;
+    margin-top: 40px !important;
+}

@@ -55,7 +55,7 @@ const Vision = () => {
                 faaliyetlerden kaynak yaratmak ve tüm kaynakların akılcı kullanımını sağlayarak savurganlığa ödün vermemek ana ilkelerimizdendir.</p>
             </div>
           </div>
-          <div className="col-md-6 mt-4 mt-md-0">
+          <div className="col-md-12 mt-4 mt-md-0">
             <div className={classes.iconBox}>
               <IoLeafOutline className={classes.icon} />
               <h4 className={classes.h4}><p className={classes.h} >DOĞAYA VE İNSAN SAĞLIĞINA ÖNEM VERMEK</p></h4>
