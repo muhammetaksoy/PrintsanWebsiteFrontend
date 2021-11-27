@@ -11,11 +11,12 @@ export default function Products() {
             .then(response => setProducts(response))
     }, []);
 
+
     const productsAll = products.map(item => (
         <div>
             <div className="card border-0" >
                 <div className={classes.wrap}>
-                    <img className={classes.img} src={item.PhotoUrlMain} alt="Card image cap" />
+                    <img id="img" className={classes.img} src={item.PhotoUrlMain} alt="Card image cap" />
                     <div className="card-body">
                         <h5 className="card-title text-center text-danger">{item.CategoryName}</h5>
                     </div>

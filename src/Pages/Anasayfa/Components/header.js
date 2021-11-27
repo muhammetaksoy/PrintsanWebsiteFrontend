@@ -1,3 +1,4 @@
+import { height } from '@mui/system';
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import classes from './Header.module.css';
@@ -6,7 +7,7 @@ export default class Header extends Component {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light p-2 ">
                 <div className="container-fluid w-75 ">
-                    <a className="navbar-brand" style={{ color: "#556270", fontWeight: "bold", fontSize: "28px" }} href="#">Printsan</a>
+                    <img style={{ height: "90px" }} className="navbar-brand" alt="printsanlogo" src={require("../../../images/printsanlogo.png").default} />
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"> </span>
                     </button>
