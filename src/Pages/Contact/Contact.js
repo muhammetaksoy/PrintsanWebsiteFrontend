@@ -41,7 +41,10 @@ const Contact = () => {
                             <div className="col-md-6 form-group">
                             <input type="text" name="name" className="form-control" id="name" placeholder="İsim Soyisim" required />
                             </div>
-                            <div className="col-md-6 form-group mt-3 mt-md-0">
+                            <div className="col-md-6 form-group">
+                            <input type="tel" name="phone" className="form-control" id="phone" placeholder="Telefon (5xx xxx xxxx)" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" />
+                            </div>
+                            <div className="col-md-6 form-group mt-3 ">
                             <input type="email" className="form-control" name="email" id="email" placeholder="Email" required />
                             </div>
                         </div>

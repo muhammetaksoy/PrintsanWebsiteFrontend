@@ -1,6 +1,17 @@
 .img {
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
 }
 
+.li {
+    cursor: pointer;
+}
 
+.li:hover {
+    background-color: #f8d7da;
+}
+
+.active {
+    background-color: #f8d7da !important;
+    border-color: #f8d7da !important;
+}
