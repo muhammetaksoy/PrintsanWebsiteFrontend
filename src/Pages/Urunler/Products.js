@@ -18,17 +18,14 @@ export default function Products() {
     }, []);
 
     const onClickHandler = (e) => {
-        //Products_active__ff4XP classı "classes.active" in tarayıcıda derlenmiş hali
-        document.querySelector(".Products_active__1qF26").classList.remove("Products_active__1qF26")
-        e.currentTarget.classList.add("Products_active__1qF26")
+        document.querySelector(`.${classes.active}`).classList.remove(`${classes.active}`)
+        e.currentTarget.classList.add(`${classes.active}`)
         if(e.currentTarget.innerText === "Tümü"){
             setProductCopy(products)
         }else{
             const filteredProducts = products.filter(x => x.CategoryName === e.currentTarget.innerText)
             setProductCopy(filteredProducts);
         }
-
-
     }
 
     const categories = new Set(category.map(item=> item.CategoryName));
@@ -36,7 +33,7 @@ export default function Products() {
     const categoryList = categoryArray.map(item =><li value={item} className={`${classes.li} list-group-item`} key={item} onClick={onClickHandler}>{item}</li> )
 
     const productsAll = productCopy.map(item => (
-        <div>
+        <div key={item.ProductId}>
             <div className="card border-0" >
                 <div className={classes.wrap}>
                     <img className={classes.img} src={item.PhotoUrlMain} alt="Card cap" onMouseEnter={e => item.PhotoUrlFocused ? e.currentTarget.src = item.PhotoUrlFocused : e.currentTarget.src = item.PhotoUrlMain} onMouseLeave={e => e.currentTarget.src = item.PhotoUrlMain} />

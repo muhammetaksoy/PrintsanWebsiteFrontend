@@ -42,7 +42,7 @@ const Contact = () => {
                             <input type="text" name="name" className="form-control" id="name" placeholder="İsim Soyisim" required />
                             </div>
                             <div className="col-md-6 form-group">
-                            <input type="tel" name="phone" className="form-control" id="phone" placeholder="Telefon (5xx xxx xxxx)" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" />
+                            <input type="tel" name="phone" className="form-control" id="phone" placeholder="Telefon (5xx xxx xxxx)" pattern="[0-9]{3} [0-9]{3} [0-9]{4}"/>
                             </div>
                             <div className="col-md-6 form-group mt-3 ">
                             <input type="email" className="form-control" name="email" id="email" placeholder="Email" required />
@@ -52,7 +52,7 @@ const Contact = () => {
                             <input type="text" className="form-control" name="subject" id="subject" placeholder="Konu" required />
                         </div>
                         <div className="form-group mt-3">
-                            <textarea className="form-control" name="message" rows="5" placeholder="Mesaj" required></textarea>
+                            <textarea className="form-control" name="message" rows={5} placeholder="Mesaj" required></textarea>
                         </div>
                        
                         <div className="text-center"><button type="submit">Mesajı Gönder</button></div>

@@ -12,7 +12,6 @@ const PopulerProducts = () => {
         <ProductCart key={item.ProductId} id={item.ProductId} image={item.PhotoUrlMain} categoryName={item.CategoryName} />
 
     ));
-    console.log(populerProducts)
     return (
 
         <section id="portfolio" className="portfolio">
