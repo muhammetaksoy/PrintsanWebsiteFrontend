@@ -6,14 +6,14 @@ export default class Team extends Component {
             <div>
 
                 <section id="team" className={classes.section}>
-                    <h2 className="text-center container-fluid  p-2 alert alert-danger border-0 rounded-0 " style={{ "width": "85%","fontSize": "2.8rem" }}>Ekip</h2>
+                    <h2 className="text-center container-fluid  p-2 alert alert-danger border-0 rounded-0 " style={{ "width": "85%", "fontSize": "2.8rem" }}>Ekip</h2>
                     <div className="container-fluid" style={{ "width": "85%" }}>
 
                         <div className="row ">
                             <div className="col-lg-4 mt-4">
                                 <div className={`${classes.member} d-flex align-items-center `}>
                                     <div className={classes.pic}>
-                                        <img src={require("../../images/muhasebe.jpg").default} alt="aaa" />
+                                        <img src={require("../../images/ekip_ikonlar/santrall.png").default} alt="aaa" />
                                     </div>
 
                                     <div className={classes.memberInfo}>
@@ -29,7 +29,7 @@ export default class Team extends Component {
                             <div className="col-lg-4 mt-4">
                                 <div className={`${classes.member} d-flex align-items-center`}>
                                     <div className={classes.pic}>
-                                        <img src={require("../../images/muhasebe.jpg").default} alt="aaa" />
+                                        <img src={require("../../images/ekip_ikonlar/müşterihiz.jpg").default} alt="aaa" />
                                     </div>
 
                                     <div className={classes.memberInfo}>
@@ -46,7 +46,7 @@ export default class Team extends Component {
                             <div className="col-lg-4 mt-4">
                                 <div className={`${classes.member} d-flex align-items-center`}>
                                     <div className={classes.pic}>
-                                        <img src={require("../../images/muhasebe.jpg").default} alt="aaa" />
+                                        <img src={require("../../images/ekip_ikonlar/muhasebe.png").default} alt="aaa" />
                                     </div>
 
                                     <div className={classes.memberInfo}>
@@ -63,7 +63,7 @@ export default class Team extends Component {
                             <div className="col-lg-4 mt-4">
                                 <div className={`${classes.member} d-flex align-items-center`}>
                                     <div className={classes.pic}>
-                                        <img src={require("../../images/muhasebe.jpg").default} alt="aaa" />
+                                        <img src={require("../../images/ekip_ikonlar/insankaynaklari.png").default} alt="aaa" />
                                     </div>
 
                                     <div className={classes.memberInfo}>
@@ -80,7 +80,7 @@ export default class Team extends Component {
                             <div className="col-lg-4 mt-4">
                                 <div className={`${classes.member} d-flex align-items-center`}>
                                     <div className={classes.pic}>
-                                        <img src={require("../../images/muhasebe.jpg").default} alt="aaa" />
+                                        <img src={require("../../images/ekip_ikonlar/imalatmuduru.png").default} alt="aaa" />
                                     </div>
 
                                     <div className={classes.memberInfo}>
@@ -96,7 +96,7 @@ export default class Team extends Component {
                             <div className="col-lg-4 mt-4 ">
                                 <div className={`${classes.member} d-flex align-items-center`}>
                                     <div className={classes.pic}>
-                                        <img src={require("../../images/muhasebe.jpg").default} alt="aaa" />
+                                        <img src={require("../../images/ekip_ikonlar/müşterihiz.jpg").default} alt="aaa" />
                                     </div>
 
                                     <div className={classes.memberInfo}>
@@ -112,7 +112,7 @@ export default class Team extends Component {
                             <div className="col-lg-4 mt-4">
                                 <div className={`${classes.member} d-flex align-items-center`}>
                                     <div className={classes.pic}>
-                                        <img src={require("../../images/muhasebe.jpg").default} alt="aaa" />
+                                        <img src={require("../../images/ekip_ikonlar/desen.png").default} alt="aaa" />
                                     </div>
 
                                     <div className={classes.memberInfo}>
@@ -128,7 +128,7 @@ export default class Team extends Component {
                             <div className="col-lg-4 mt-4">
                                 <div className={`${classes.member} d-flex align-items-center`}>
                                     <div className={classes.pic}>
-                                        <img src={require("../../images/muhasebe.jpg").default} alt="aaa" />
+                                        <img src={require("../../images/ekip_ikonlar/musteritemsilcisi.png").default} alt="aaa" />
                                     </div>
 
                                     <div className={classes.memberInfo}>
