@@ -1,5 +1,3 @@
-import { Alert } from '@mui/material';
-import { width } from '@mui/system';
 import * as React from 'react';
 import { useState } from 'react';
 import ModalVideo from 'react-modal-video'
