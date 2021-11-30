@@ -2,6 +2,7 @@ import "../../../App.css";
 import classes from './Footer.module.css';
 import { IoLogoFacebook, IoLogoInstagram, IoLogoYoutube } from "react-icons/io5";
 import React from "react";
+import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <footer className={classes.footer} >
@@ -16,13 +17,13 @@ const Footer = () => {
                                 <strong>Email: </strong>info@printsan.com<br />
                             </p>
                             <div className={classes.socialLinks}>
-                                <a href="" className="me-2">
+                                <a href="https://www.google.com" className="me-2">
                                     <IoLogoFacebook className={classes.icon} />
                                 </a>
-                                <a href="" className="me-2">
+                                <a href="https://www.google.com" className="me-2">
                                     <IoLogoInstagram className={classes.icon} />
                                 </a>
-                                <a href="" className="me-2">
+                                <a href="https://www.google.com" className="me-2">
                                     <IoLogoYoutube className={classes.icon} />
                                 </a>
                             </div>
@@ -34,31 +35,30 @@ const Footer = () => {
                                 <div className="row">
                                     <div className="col-md-6">
                                         <li className="my-2">
-                                            <a className="text-white text-decoration-none " href="#">Hakkımızda</a>
                                         </li>
                                         <li className="my-2">
-                                            <a className="text-white text-decoration-none" href="#">Politikalar</a>
+                                            <Link to="/Politikalar" className="nav-link " aria-current="page">Politikalar</Link>
                                         </li>
                                         <li className="my-2">
-                                            <a className="text-white text-decoration-none" href="#">Ürünler</a>
+                                            <Link to="/Urunler" className="nav-link " aria-current="page">Ürünler</Link>
                                         </li>
                                         <li className="my-2">
-                                            <a className="text-white text-decoration-none" href="#">Üretim</a>
+                                            <Link to="/Uretim" className="nav-link " aria-current="page">Üretim</Link>
                                         </li>
                                     </div>
                                     <div className="col-md-6">
 
                                         <li className="my-2">
-                                            <a className="text-white text-decoration-none" href="#">Makina Parkuru</a>
+                                            <Link to="/MakinaParkuru" className="nav-link " aria-current="page">Makina Parkuru</Link>
                                         </li>
                                         <li className="my-2">
-                                            <a className="text-white text-decoration-none" href="#">Medya</a>
+                                            <Link to="/Medya" className="nav-link " aria-current="page">Medya</Link>
                                         </li>
                                         <li className="my-2">
-                                            <a className="text-white text-decoration-none" href="#">Kariyer</a>
+                                            <a className="text-white text-decoration-none" href="www.google.com.tr">Kariyer</a>
                                         </li>
                                         <li className="my-2">
-                                            <a className="text-white text-decoration-none" href="#">İletişim</a>
+                                            <Link to="/Iletisim" className="nav-link " aria-current="page">İletişim</Link>
                                         </li>
                                     </div>
                                 </div>

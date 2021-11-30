@@ -15,9 +15,9 @@ export default class Header extends Component {
                                 <Link to="/Anasayfa" className="nav-link " aria-current="page">Anasayfa</Link>
                             </li>
                             <li className="nav-item me-4 dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <p className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Şirket Profili
-                                </a>
+                                </p>
                                 <ul className="dropdown-menu rounded-0" aria-labelledby="navbarDropdown">
                                     <li><Link to="/Hakkimizda" className="dropdown-item">Hakkımızda</Link></li>
                                     <li><Link to="/Politikalar" className="dropdown-item">Politikalar</Link></li>
@@ -39,12 +39,12 @@ export default class Header extends Component {
                                 <Link to="/Medya" className="nav-link " aria-current="page">Medya</Link>
                             </li>
                             <li className="nav-item me-4 dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <p className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Kariyer
-                                </a>
+                                </p>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a className="dropdown-item" href="#">Açık Pozisyonlar</a></li>
-                                    <li><a className="dropdown-item" href="#">Başvuru</a></li>
+                                    <li><p className="dropdown-item" >Açık Pozisyonlar</p></li>
+                                    <li><p className="dropdown-item" >Başvuru</p></li>
                                 </ul>
                             </li>
                             <li className="nav-item me-4">
