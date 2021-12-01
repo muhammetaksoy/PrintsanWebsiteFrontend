@@ -9,7 +9,7 @@ export default function Video() {
     const [isOpen, setOpen] = useState(false)
     return (
 
-        <div className="container-fluid w-75">
+        <div className="container-fluid" style={{ "width": "80%" }}>
             <div className="row " >
 
 
@@ -33,7 +33,7 @@ export default function Video() {
                 </div>
                 <div className="col-lg-4 col-md-6 col-12 " >
 
-                    <img style={{ height: "400px", "width": "100%" }} alt="deneme" src={require("../../../images/bina.png").default} />
+                    <img style={{ height: "400px", "width": "100%" }} alt="deneme" src={require("../../../images/bina.jpg").default} />
                 </div>
 
 

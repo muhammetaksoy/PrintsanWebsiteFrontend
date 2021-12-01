@@ -30,35 +30,37 @@ const Footer = () => {
                         </div>
 
                         <div className="footer-links w-25">
-                            <h3> <strong>Site Haritası</strong> </h3>
+
                             <ul className="list-unstyled">
                                 <div className="row">
-                                    <div className="col-md-6">
+                                    <h3> <strong>Site Haritası</strong> </h3>
+                                    <div className="col-md-6 p-0">
                                         <li className="my-2">
                                         </li>
                                         <li className="my-2">
-                                            <Link to="/Politikalar" className="nav-link " aria-current="page">Politikalar</Link>
+                                            <Link to="/Politikalar" className="nav-link text-white text-decoration-none " aria-current="page">Politikalar</Link>
                                         </li>
                                         <li className="my-2">
-                                            <Link to="/Urunler" className="nav-link " aria-current="page">Ürünler</Link>
+                                            <Link to="/Urunler" className="nav-link text-white text-decoration-none " aria-current="page">Ürünler</Link>
                                         </li>
                                         <li className="my-2">
-                                            <Link to="/Uretim" className="nav-link " aria-current="page">Üretim</Link>
+                                            <Link to="/Uretim" className="nav-link text-white text-decoration-none " aria-current="page">Üretim</Link>
                                         </li>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-md-6 p-0">
 
                                         <li className="my-2">
-                                            <Link to="/MakinaParkuru" className="nav-link " aria-current="page">Makina Parkuru</Link>
+                                            <Link to="/MakinaParkuru" className="nav-link text-white text-decoration-none " aria-current="page">Makina Parkuru</Link>
                                         </li>
                                         <li className="my-2">
-                                            <Link to="/Medya" className="nav-link " aria-current="page">Medya</Link>
+                                            <Link to="/Medya" className="nav-link text-white text-decoration-none " aria-current="page">Medya</Link>
                                         </li>
                                         <li className="my-2">
-                                            <a className="text-white text-decoration-none" href="www.google.com.tr">Kariyer</a>
+                                            <Link to="/Kariyer" className="nav-link text-white text-decoration-none " aria-current="page">Kariyer</Link>
+
                                         </li>
                                         <li className="my-2">
-                                            <Link to="/Iletisim" className="nav-link " aria-current="page">İletişim</Link>
+                                            <Link to="/Iletisim" className="nav-link text-white text-decoration-none " aria-current="page">İletişim</Link>
                                         </li>
                                     </div>
                                 </div>
