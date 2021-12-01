@@ -43,7 +43,7 @@ export default class Header extends Component {
                                     Kariyer
                                 </p>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><p className="dropdown-item" >Açık Pozisyonlar</p></li>
+                                    <li><Link to="/AcikPozisyonlar" className="dropdown-item ">Açık Pozisyonlar</Link></li>
                                     <li><p className="dropdown-item" >Başvuru</p></li>
                                 </ul>
                             </li>

@@ -1,0 +1,42 @@
+.flex {
+    box-shadow: 0 1.2rem 3.6rem rgba(0, 0, 0, 0.095);
+    transition: all 0.4s;
+
+    display: flex;
+    justify-content: space-between;
+
+    background-color: #fdf2e9;
+    margin-bottom: 50px;
+    margin-top: 20px !important;
+    border-radius: 10px;
+}
+
+.flex:hover{
+    transform: translateY(-1rem);
+}
+
+.content {
+    padding: 2.4rem 3.6rem;
+}
+
+.btn {
+    height: 85px;
+    width: 150px;
+    margin-top: 0 !important;
+    align-self: center;
+    border-radius: 5px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 1.8rem;
+}
+
+.description {
+    color: #555;
+    font-size: 1.4rem;
+}

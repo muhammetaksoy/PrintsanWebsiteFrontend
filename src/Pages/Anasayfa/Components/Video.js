@@ -33,7 +33,7 @@ export default function Video() {
                 </div>
                 <div className="col-lg-4 col-md-6 col-12 " >
 
-                    <img style={{ height: "400px", "width": "100%" }} alt="deneme" src={require("../../../images/bina.jpg").default} />
+                    <img style={{ height: "400px", "width": "686px" }} alt="deneme" src={require("../../../images/bina.jpg").default} />
                 </div>
 
 

@@ -94,8 +94,8 @@ const Process = () => {
 
             <div className={classes.box}>
                 <img
-                src={require("../../../src/images/Boyahane.jpg").default}
-                alt="Boyahane"
+                src={require("../../../src/images/MalKabul.jpg").default}
+                alt="MalKabul"
                 className={classes.img}
                 />
             </div>
@@ -141,8 +141,8 @@ const Process = () => {
 
             <div className={classes.box}>
                 <img
-                src={require("../../../src/images/Imalat.jpg").default}
-                alt="Imalat"
+                src={require("../../../src/images/Sevkiyat.png").default}
+                alt="Sevkiyat"
                 className={classes.img}
                 />
             </div>

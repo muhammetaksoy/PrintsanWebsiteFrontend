@@ -1,8 +1,54 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { IoLocationOutline,IoMailOutline,IoCallOutline } from "react-icons/io5";
 import classes from './Contact.module.css';
 
 const Contact = () => {
+    const [enteredName, setEnteredName] = useState('');
+    const [enteredPhone, setEnteredPhone] = useState('');
+    const [enteredEmail, setEnteredEmail] = useState('');
+    const [enteredSubject, setEnteredSubject] = useState('');
+    const [enteredMessage, setEnteredMessage] = useState('');
+
+    const nameInputHandler = event => {
+        setEnteredName(event.target.value);
+    }
+    const phoneInputHandler = event => {
+        setEnteredPhone(event.target.value);
+    }
+    const emailInputHandler = event => {
+        setEnteredEmail(event.target.value);
+    }
+    const subjectInputHandler = event => {
+        setEnteredSubject(event.target.value);
+    }
+    const messageInputHandler = event => {
+        setEnteredMessage(event.target.value);
+    }
+
+    
+    const submitHandler = (event) => {
+        event.preventDefault();
+        fetch("http://printsanaccess.online/api/Increase/PostContactForm", {
+            method: 'POST',
+            body: JSON.stringify({
+                Email: enteredEmail,
+                PhoneNumber: enteredPhone,
+                Text: enteredMessage,
+                FullName: enteredName,
+                Header: enteredSubject
+            }),
+            headers:{
+                "Content-Type":"application/json; charset=UTF-8"
+            }
+        })
+        
+        setEnteredName('');
+        setEnteredPhone('');
+        setEnteredSubject('');
+        setEnteredEmail('');
+        setEnteredMessage('');
+    }
+
     return (
         <section className={classes.section}>
             <h2 className="text-center container-fluid  p-2 alert alert-danger border-0 rounded-0 " style={{ "width": "85%","fontSize": "2.8rem" }}>İletişim</h2>
@@ -36,23 +82,24 @@ const Contact = () => {
 
                     <div className="col-lg-8 mt-5 mt-lg-0">
 
-                        <form method="post" className={classes.form}>
+                        <form method="post" className={classes.form} onSubmit={submitHandler}>
                         <div className="row">
                             <div className="col-md-6 form-group">
-                            <input type="text" name="name" className="form-control" id="name" placeholder="İsim Soyisim" required />
+                                
+                                <input value={enteredName} type="text" name="name" className="form-control" id="name" placeholder="İsim Soyisim" required  onChange={nameInputHandler}/>
                             </div>
                             <div className="col-md-6 form-group">
-                            <input type="tel" name="phone" className="form-control" id="phone" placeholder="Telefon (5xx xxx xxxx)" pattern="[0-9]{3} [0-9]{3} [0-9]{4}"/>
+                            <input value={enteredPhone} type="tel" name="phone" className="form-control" id="phone" placeholder="Telefon (5xx xxx xxxx)" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" required onChange={phoneInputHandler}/>
                             </div>
                             <div className="col-md-6 form-group mt-3 ">
-                            <input type="email" className="form-control" name="email" id="email" placeholder="Email" required />
+                            <input value={enteredEmail} type="email" className="form-control" name="email" id="email" placeholder="Email" required onChange={emailInputHandler}/>
                             </div>
                         </div>
                         <div className="form-group mt-3">
-                            <input type="text" className="form-control" name="subject" id="subject" placeholder="Konu" required />
+                            <input value={enteredSubject} type="text" className="form-control" name="subject" id="subject" placeholder="Konu" required onChange={subjectInputHandler}/>
                         </div>
                         <div className="form-group mt-3">
-                            <textarea className="form-control" name="message" rows={5} placeholder="Mesaj" required></textarea>
+                            <textarea value={enteredMessage} className="form-control" name="message" rows={5} placeholder="Mesaj" required onChange={messageInputHandler}></textarea>
                         </div>
                        
                         <div className="text-center"><button type="submit">Mesajı Gönder</button></div>

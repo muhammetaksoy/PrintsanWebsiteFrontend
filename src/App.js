@@ -13,6 +13,7 @@ import Contact from "Pages/Contact/Contact";
 import MachineParkour from "Pages/MakinaParkuru/MachineParkour";
 import Media from "Pages/Medya/Media";
 import Products from "Pages/Urunler/Products";
+import OpenPositions from "Pages/Anasayfa/Career/OpenPositions";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path="MakinaParkuru" element={<MachineParkour />} />
         <Route path="Medya" element={<Media />} />
         <Route path="Iletisim" element={<Contact />} />
+        <Route path="AcikPozisyonlar" element={<OpenPositions />} />
       </Routes>
       <Footer />
 
