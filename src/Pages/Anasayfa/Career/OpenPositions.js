@@ -9,7 +9,7 @@ const OpenPositions = () => {
             .then((response) => response.json())
             .then(response => setPositions(response))
     }, []);
-    const positionsToPrint = positions.map(item => <OpenPositionsCart key={item.OpenPositionId} title={item.JobTitle} description={item.Description} date={item.PublishedDate}/>)
+    const positionsToPrint = positions.map(item => <OpenPositionsCart id={item.OpenPositionId} key={item.OpenPositionId} title={item.JobTitle} description={item.Description} date={item.PublishedDate}/>)
     return(
         <section className={classes.section}>
             <h2 className="text-center container-fluid  p-2 alert alert-danger border-0 rounded-0 " style={{ "width": "85%","fontSize": "2.8rem" }}>İlanlar</h2>

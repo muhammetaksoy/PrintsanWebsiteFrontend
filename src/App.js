@@ -15,6 +15,7 @@ import Media from "Pages/Medya/Media";
 import Products from "Pages/Urunler/Products";
 import OpenPositions from "Pages/Anasayfa/Career/OpenPositions";
 import MediaDetail from "Pages/Medya/MedyaDetay/MediaDetail";
+import OpenPositionForm from "Pages/Anasayfa/Career/OpenPositionForm";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/MedyaDetay/:id" element={<MediaDetail />} />
         <Route path="Iletisim" element={<Contact />} />
         <Route path="AcikPozisyonlar" element={<OpenPositions />} />
+        <Route path="/AcikPozisyonlarForm/:id" element={<OpenPositionForm />} />
       </Routes>
       <Footer />
 

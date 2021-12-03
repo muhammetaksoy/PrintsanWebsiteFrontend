@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import classes from './OpenPositionsCart.module.css';
 
 const OpenPositionsCart = (props) => {
@@ -9,7 +10,8 @@ const OpenPositionsCart = (props) => {
                 <p className={classes.description}>{props.description}</p>
                 <p className={classes.description}>{props.date}</p>
             </div>
-            <button className={classes.btn}>Başvur</button>
+            <Link className={classes.btn} to={`/AcikPozisyonlarForm/${props.id}`} >Başvur</Link>
+            
         </div>
     )
 }
