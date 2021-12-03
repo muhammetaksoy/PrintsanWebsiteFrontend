@@ -14,6 +14,7 @@ import MachineParkour from "Pages/MakinaParkuru/MachineParkour";
 import Media from "Pages/Medya/Media";
 import Products from "Pages/Urunler/Products";
 import OpenPositions from "Pages/Anasayfa/Career/OpenPositions";
+import MediaDetail from "Pages/Medya/MedyaDetay/MediaDetail";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path="Uretim" element={<Process />} />
         <Route path="MakinaParkuru" element={<MachineParkour />} />
         <Route path="Medya" element={<Media />} />
+        <Route path="/MedyaDetay/:id" element={<MediaDetail />} />
         <Route path="Iletisim" element={<Contact />} />
         <Route path="AcikPozisyonlar" element={<OpenPositions />} />
       </Routes>

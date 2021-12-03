@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import classes from './Media.module.css';
 const Media = () => {
     const [articles, setArticles] = useState([]);
@@ -27,7 +28,9 @@ const Media = () => {
                             <p>{item.Text.substring(0, 150)}...</p>
                         </div>
                         <div className={classes.cardFooter}>
-                            <a className={classes.button}>Detay</a>
+                            <Link className={classes.button} to={`/MedyaDetay/${item.ArticleId}`} >
+                                Detay
+                            </Link>
                         </div>
                     </div>
                 ))

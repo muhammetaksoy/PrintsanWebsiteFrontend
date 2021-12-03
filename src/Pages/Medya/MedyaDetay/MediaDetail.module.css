@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+.container {
+    font-family: "Quicksand", sans-serif;
+    max-width:75%;
+    margin-block: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+  }
+  
+
+  .cardBody {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  
+  
+  .cardBody h4 {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: black;
+  }
+
+  .button{
+    margin-top:0px !important;
+    padding: 6px 24px;
+    background: linear-gradient(to bottom, #ef473a, #cb2d3e);
+    color: #fafafa;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .button:hover{
+    border:1px solid red;
+    background:#fafafa;
+    color:red;
+    transition-duration:1s;
+  }
+
+  .cardFooter {
+    padding: 1rem;
+  }
+  
+  .tagRed {
+    align-self: flex-start;
+    padding: .25em .75em;
+    border-radius: 1em;
+    font-size: .75rem;
+    background: linear-gradient(to bottom, #ef473a, #cb2d3e);
+    color: #fafafa;
+  }
