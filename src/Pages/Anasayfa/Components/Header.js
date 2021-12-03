@@ -5,7 +5,7 @@ export default class Header extends Component {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light p-2 ">
                 <div className="container-fluid w-75 ">
-                    <img style={{ height: "90px" }} className="navbar-brand" alt="printsanlogo" src={require("../../../images/printsanlogo.png").default} />
+                    <img style={{ height: "90px", width:"220px" }} className="navbar-brand" alt="printsanlogo" src={require("../../../images/printsanlogo.png").default} />
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"> </span>
                     </button>
@@ -44,7 +44,7 @@ export default class Header extends Component {
                                 </p>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><Link to="/AcikPozisyonlar" className="dropdown-item ">Açık Pozisyonlar</Link></li>
-                                    <li><p className="dropdown-item" >Başvuru</p></li>
+                                    <li><Link to="/Basvuru" className="dropdown-item ">Başvuru</Link></li>
                                 </ul>
                             </li>
                             <li className="nav-item me-4">

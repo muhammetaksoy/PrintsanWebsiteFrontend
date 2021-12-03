@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import { useParams } from 'react-router-dom';
 import classes from './OpenPositionForm.module.css'
-
-const OpenPositionForm = () => {
-    const { id } = useParams()
+const JobAplly = () => {
     const [enteredName, setEnteredName] = useState('');
     const [enteredPhone, setEnteredPhone] = useState('');
     const [enteredEmail, setEnteredEmail] = useState('');
@@ -30,7 +27,7 @@ const OpenPositionForm = () => {
                 FullName: enteredName,
                 PhoneNumber: enteredPhone,
                 Email: enteredEmail,
-                OpenPositionId: id
+                OpenPositionId: 0
             }),
             headers:{
                 "Content-Type":"application/json; charset=UTF-8"
@@ -76,8 +73,6 @@ const OpenPositionForm = () => {
 
         </div>
         </React.Fragment>
-        
-        
     )
 }
-export default OpenPositionForm;
+export default JobAplly;

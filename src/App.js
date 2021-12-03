@@ -16,6 +16,7 @@ import Products from "Pages/Urunler/Products";
 import OpenPositions from "Pages/Anasayfa/Career/OpenPositions";
 import MediaDetail from "Pages/Medya/MedyaDetay/MediaDetail";
 import OpenPositionForm from "Pages/Anasayfa/Career/OpenPositionForm";
+import JobAplly from "Pages/Anasayfa/Career/JobApply";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         <Route path="Iletisim" element={<Contact />} />
         <Route path="AcikPozisyonlar" element={<OpenPositions />} />
         <Route path="/AcikPozisyonlarForm/:id" element={<OpenPositionForm />} />
+        <Route path="Basvuru" element={<JobAplly />} />
       </Routes>
       <Footer />
 
