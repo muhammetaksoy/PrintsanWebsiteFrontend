@@ -11,20 +11,27 @@ export default function MachineParkour() {
         fetch("http://printsanaccess.online/api/Explore/GetMachineParkours")
             .then((response) => response.json())
             .then(response => {
-                console.log(response)
                 setMachineParkours(response)
             })
     }, []);
 
 
     const machineParkoursAll = machineParkours.map(item => (
-        <div key={item.CategoryId} className="col-md-3" >
-            <ul className={classes.ul}>
-                <h3 className={classes.h3}>{item.CategoryHeader}</h3>
-                {item.ParkourList.map(x =>
-                    <li className={classes.li}><IoCheckmarkDone className={classes.icon} />{x.Text}</li>
-                )}
-            </ul>
+        <div key={item.CategoryId} className="col-md-6" >
+            <div className={classes.wrapCollabsible} >
+                <input id={item.CategoryId} className={classes.toggle} type="checkbox" />
+                <label htmlFor={item.CategoryId} className={classes.lblToggle}>{item.CategoryHeader}</label>
+                <div className={classes.collapsibleContent}>
+                    <div className={classes.contentInner} >
+                        <ul className={classes.ul}>
+                            {item.ParkourList.map(x =>
+                                <li key={item.MachineParkourId} className={classes.li}><IoCheckmarkDone className={classes.icon} />{x.Text}</li>
+                            )}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
         </div>
     ))
 
@@ -33,10 +40,24 @@ export default function MachineParkour() {
         <section style={{ padding: "40px 0px", overflow: "hidden" }}>
             <h2 className="text-center container-fluid  p-2 alert alert-danger border-0 rounded-0 " style={{ "width": "85%", "fontSize": "2.8rem" }}>Makina Parkuru</h2>
             <div className="container-fluid " style={{ "width": "85%" }}>
-                <div className="row">
+                <div className="text-center">
+                    <iframe
+                        width="860"
+                        height="450"
+                        src="https://www.youtube.com/embed/YwGO5q4rhS8"
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen>
+
+                    </iframe>
+                </div>
+
+                <div className="row " style={{ marginTop: "100px", "marginBottom": "100px" }}>
                     {machineParkoursAll}
                 </div>
             </div>
+
         </section>
 
     )
