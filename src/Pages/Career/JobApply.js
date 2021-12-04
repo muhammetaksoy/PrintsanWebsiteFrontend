@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import { useParams } from 'react-router-dom';
 import classes from './OpenPositionForm.module.css'
-
-const OpenPositionForm = () => {
-    const { id } = useParams()
+const JobAplly = () => {
     const [enteredName, setEnteredName] = useState('');
     const [enteredPhone, setEnteredPhone] = useState('');
     const [enteredEmail, setEnteredEmail] = useState('');
@@ -30,7 +27,7 @@ const OpenPositionForm = () => {
                 FullName: enteredName,
                 PhoneNumber: enteredPhone,
                 Email: enteredEmail,
-                OpenPositionId: id
+                OpenPositionId: 0
             }),
             headers:{
                 "Content-Type":"application/json; charset=UTF-8"
@@ -53,7 +50,7 @@ const OpenPositionForm = () => {
     }
     return (
         <React.Fragment>
-            <h2 className="text-center container-fluid  p-2 alert alert-danger border-0 rounded-0 " style={{ "width": "85%","fontSize": "2.8rem" }}>İlan Başvuru Formu</h2>
+            <h2 className="text-center container-fluid  p-2 alert alert-danger border-0 rounded-0 " style={{ "width": "85%","fontSize": "2.8rem" }}>Bizimle Çalışmak İster Misiniz?</h2>
             <div className="container">
             
                 <form method="post" className={classes.form} onSubmit={submitHandler}>
@@ -62,7 +59,7 @@ const OpenPositionForm = () => {
                         <input value={enteredName} type="text" className="form-control" name="name" id="name" placeholder="İsim Soyisim" required onChange={nameInputHandler}/>
                     </div>
                     <div className={`form-group mt-3 ${classes.input}`}>
-                        <input value={enteredPhone} type="text" className="form-control" name="phone" id="phone" placeholder="Telefon" required onChange={phoneInputHandler}/>
+                        <input value={enteredPhone} type="text" className="form-control" name="phone" id="phone" pattern="[1-9]{1}[0-9]{9}" placeholder="Telefon(5xxxxxxxxx)" required onChange={phoneInputHandler}/>
                     </div>
                     <div className={`form-group mt-3 ${classes.input}`}>
                         <input value={enteredEmail} type="text" className="form-control" name="email" id="email" placeholder="Email" required onChange={emailInputHandler}/>
@@ -76,8 +73,6 @@ const OpenPositionForm = () => {
 
         </div>
         </React.Fragment>
-        
-        
     )
 }
-export default OpenPositionForm;
+export default JobAplly;

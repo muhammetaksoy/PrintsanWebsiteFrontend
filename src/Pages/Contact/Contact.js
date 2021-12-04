@@ -89,7 +89,7 @@ const Contact = () => {
                                 <input value={enteredName} type="text" name="name" className="form-control" id="name" placeholder="İsim Soyisim" required  onChange={nameInputHandler}/>
                             </div>
                             <div className="col-md-6 form-group">
-                            <input value={enteredPhone} type="tel" name="phone" className="form-control" id="phone" placeholder="Telefon (5xx xxx xxxx)" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" required onChange={phoneInputHandler}/>
+                            <input value={enteredPhone} type="tel" name="phone" className="form-control" id="phone" placeholder="Telefon (5xxxxxxxxx)" pattern="[1-9]{1}[0-9]{9}" required onChange={phoneInputHandler}/>
                             </div>
                             <div className="col-md-6 form-group mt-3 ">
                             <input value={enteredEmail} type="email" className="form-control" name="email" id="email" placeholder="Email" required onChange={emailInputHandler}/>

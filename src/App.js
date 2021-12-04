@@ -13,10 +13,10 @@ import Contact from "Pages/Contact/Contact";
 import MachineParkour from "Pages/MakinaParkuru/MachineParkour";
 import Media from "Pages/Medya/Media";
 import Products from "Pages/Urunler/Products";
-import OpenPositions from "Pages/Anasayfa/Career/OpenPositions";
+import OpenPositions from "Pages/Career/OpenPositions";
 import MediaDetail from "Pages/Medya/MedyaDetay/MediaDetail";
-import OpenPositionForm from "Pages/Anasayfa/Career/OpenPositionForm";
-import JobAplly from "Pages/Anasayfa/Career/JobApply";
+import OpenPositionForm from "Pages/Career/OpenPositionForm";
+import JobAplly from "Pages/Career/JobApply";
 
 
 function App() {
