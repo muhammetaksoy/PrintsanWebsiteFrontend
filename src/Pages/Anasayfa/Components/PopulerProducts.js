@@ -18,7 +18,7 @@ const PopulerProducts = () => {
 
             <div className="container-fluid " style={{ 'width': "85%" }} >
                 <h1>Popüler Ürünler</h1>
-                <div className="d-flex justify-content-between flex-wrap portfolio-container">
+                <div className="d-flex justify-content-center flex-wrap portfolio-container">
                     {populerProducts}
                 </div>
 
