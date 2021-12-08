@@ -4,7 +4,7 @@ export default class Header extends Component {
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light p-2 ">
-                <div className="container-fluid w-75 ">
+                <div className="container-fluid ">
                     <img style={{ height: "90px", width:"220px" }} className="navbar-brand" alt="printsanlogo" src={require("../../../images/printsanlogo.png").default} />
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"> </span>

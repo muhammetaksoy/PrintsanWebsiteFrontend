@@ -12,7 +12,7 @@ export default function Politics() {
 
     const politicsAll = politics.map(item => (
         <tr>
-            <td>{item.Header}</td>
+            <td>{item.Header.toUpperCase()}</td>
             <td><a className="text-decoration-none text-danger" href={item.PDFUrl} target="_blank" rel="noreferrer">PDF</a></td>
         </tr>
     ))

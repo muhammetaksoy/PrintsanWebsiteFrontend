@@ -38,3 +38,10 @@
     color: #515D6A;
     font-weight: bold;
 }
+
+@media (max-width: 84em) {
+    .pic img{
+        width: 100px;
+        height: 100px;
+    }
+}

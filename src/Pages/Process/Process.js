@@ -94,7 +94,7 @@ const Process = () => {
 
             <div className={classes.box}>
                 <img
-                src={require("../../../src/images/MalKabul.jpg").default}
+                src={require("../../../src/images/Imalat.jpg").default}
                 alt="MalKabul"
                 className={classes.img}
                 />
