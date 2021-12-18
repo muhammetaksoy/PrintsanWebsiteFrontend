@@ -1,0 +1,12 @@
+.populerContainer {
+    width: 85% !important;
+}
+@media (max-width: 1700px) {
+    .populerContainer {
+      width: 100% !important;
+    }
+    .h1{
+        margin-left: 125px;
+    }
+  }
+  

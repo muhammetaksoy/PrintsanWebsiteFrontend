@@ -58,7 +58,7 @@ export default function Products() {
                            {categoryList}
                         </ul>
                     </div>
-                    <div className="col-md-10" style={{"width": "75%"}}>
+                    <div className={`col-md-10 ${classes.products}` } >
                         <div className="d-flex flex-wrap " style={{"columnGap":"70px"}}>
                             {productsAll}
                         </div>

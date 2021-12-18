@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProductCart from './ProductCart';
+import classes from './PopulerProduct.module.css';
 const PopulerProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
@@ -16,8 +17,8 @@ const PopulerProducts = () => {
 
         <section id="portfolio" className="portfolio">
 
-            <div className="container-fluid " style={{ 'width': "85%" }} >
-                <h1>Popüler Ürünler</h1>
+            <div className={`container-fluid ${classes.populerContainer}`} >
+                <h1 className={classes.h1}>Popüler Ürünler</h1>
                 <div className="d-flex justify-content-center flex-wrap portfolio-container">
                     {populerProducts}
                 </div>
