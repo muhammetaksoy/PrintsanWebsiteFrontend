@@ -22,6 +22,8 @@ import JobAplly from "Pages/Career/JobApply";
 function App() {
   return (
     <React.Fragment>
+      {!window.location.href.includes("Admin") &&
+      <>
       <Header />
       <Routes>
         <Route path="*" element={<NotFound />} />
@@ -41,6 +43,11 @@ function App() {
         <Route path="Basvuru" element={<JobAplly />} />
       </Routes>
       <Footer />
+      </>
+      }
+      <Routes>
+        <Route path="Admin"  element={<h1>Hello</h1>}/>
+      </Routes>
 
     </React.Fragment>
   );
