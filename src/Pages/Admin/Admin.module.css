@@ -1,0 +1,16 @@
+.section {
+    padding: 4rem;
+}
+
+.table {
+    background-color: #e9ecef;
+}
+
+.img {
+    height: 150px;
+    width: 150px;
+}
+
+.td {
+    padding-top: 3rem !important;
+}

@@ -17,6 +17,7 @@ import OpenPositions from "Pages/Career/OpenPositions";
 import MediaDetail from "Pages/Medya/MedyaDetay/MediaDetail";
 import OpenPositionForm from "Pages/Career/OpenPositionForm";
 import JobAplly from "Pages/Career/JobApply";
+import Admin from "Pages/Admin/Admin";
 
 
 function App() {
@@ -46,7 +47,7 @@ function App() {
       </>
       }
       <Routes>
-        <Route path="Admin"  element={<h1>Hello</h1>}/>
+        <Route path="Admin"  element={<Admin />}/>
       </Routes>
 
     </React.Fragment>
