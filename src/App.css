@@ -33,3 +33,23 @@ body{
 
 }
 
+.react-fancybox .box .image-box .close-btn{
+  background-color: white;
+  min-width: 25px !important;
+  min-height: 25px !important;
+  border-radius: 50%;
+  height: 25px;
+  position: absolute;
+  right: -13px;
+  top: -13px;
+}
+
+.react-fancybox .thumbnail img {
+  max-width: 600px;
+  cursor: pointer;
+}
+
+.react-fancybox .box .image-box img{
+  min-width: 700px;
+  min-height:680px;
+}
