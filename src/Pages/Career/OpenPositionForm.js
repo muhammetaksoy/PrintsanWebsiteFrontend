@@ -19,7 +19,6 @@ const OpenPositionForm = () => {
         setEnteredEmail(event.target.value);
     }
     const fileInputHandler = event => {
-        console.log(event.target.files[0])
         formData.append("file",event.target.files[0])
     }
     const submitHandler = (event) => {

@@ -1,17 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import classes from './Admin.module.css';
+import Modal from '../Anasayfa/Components/UI/Modal';
+import { event } from 'jquery';
 const Admin = () => {
   const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [cartIsShown, setCartIsShown] = useState(false);
+  const [editIsShown, setEditIsShown] = useState(false);
+  const [getCategoryId, setGetCategoryId] = useState('');
+  const [getId, setId] = useState('');
+  const [isPopular, setIsPopular] = useState('');
+  const formData = new FormData();
+
   useEffect(() => {
     fetch("http://printsanaccess.online/api/Explore/GetActiveProducts")
       .then((response) => response.json())
-      .then(response => {
-        setProducts(response)
-        console.log(response)
-      })
+      .then(response => setProducts(response))
+      fetch("http://printsanaccess.online/api/Admin/GetProductCategories")
+      .then(response => response.json())
+      .then(response => setCategories(response))
   }, []);
 
-  const productToPrint = products.map(item => <tr role="row" className="odd">
+  const showEdit = (event) => {
+    setId(event.target.value)
+    setEditIsShown(true)
+  }
+  const hideEdit = () => {
+    setEditIsShown(false)
+  }
+
+  const productToPrint = products.map(item => <tr key={item.ProductId} role="row" className="odd">
     <td className="table-column-pr-0">
     </td>
     <td className="table-column-pl-0">
@@ -23,9 +41,144 @@ const Admin = () => {
       {item.CategoryName}
     </td>
     <td className={classes.td}>{item.isPopular ? "Popüler Ürün" : "Popüler Ürün Değil"}</td>
+    <td><button value={item.ProductId} onClick={showEdit}>Düzenle</button></td>
   </tr>)
+  
+  const categoriesToPrint = categories.map(item => <option value={item.Id}>{item.CategoryName}</option>)
+
+  const showModal = () => {
+    setCartIsShown(true)
+  }
+  const hideModal = () => {
+    setCartIsShown(false)
+  }
+  
+  const selectInputHandler = event => {
+    setGetCategoryId(event.target.value)
+  }
+  const selectInputHandler2 = event => {
+    setIsPopular(event.target.value)
+  }
+ 
+
+  const fileInputHandler = event => {
+    formData.append("file",event.target.files[0])
+  }
+
+  const fileInputHandler2 = event => {
+    formData.append("file2",event.target.files[0])
+  }
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    if(getCategoryId && isPopular){
+      fetch("http://printsanaccess.online/api/Admin/CreateNewProduct", {
+        method: 'POST',
+        body: JSON.stringify({
+          ProductCategoryId:getCategoryId,
+          isPopular: isPopular,
+          PhotoPath1:"",
+          PhotoPath2:""
+        }),
+        headers:{
+            "Content-Type":"application/json; charset=UTF-8"
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        fetch(`http://printsanaccess.online/api/Admin/PostProductImages?productId=${data.productId}`, {
+        method: 'POST',
+        body: formData
+    }).then(a =>{
+      setCartIsShown(false)
+      document.location.reload()
+    })
+        
+    })
+    }
+     
+    
+    
+}
+
+  const editSubmitHandler = event => {
+    event.preventDefault();
+    if(getCategoryId && isPopular){
+      fetch("http://printsanaccess.online/api/Admin/EditProduct",{
+        method: 'POST',
+          body: JSON.stringify({
+            ProductCategoryId:getCategoryId,
+            Id:getId,
+            isPopular: isPopular,
+            PhotoPath1:"",
+            PhotoPath2:"",
+            isActive:true
+          }),
+          headers:{
+              "Content-Type":"application/json; charset=UTF-8"
+          }
+      })
+      setEditIsShown(false)
+      document.location.reload()
+    }
+   
+  }
   return (
     <div>
+      {editIsShown && <Modal onHideCart={hideEdit}>
+      <form className={classes.form} method="post" onSubmit={editSubmitHandler}>
+      <div>
+        <label style={{"marginBottom":"20px"}}>Kategori Seçin:</label>
+        <select onChange={selectInputHandler}>
+        <option>Kategori seçin</option>
+          {categoriesToPrint}
+        </select>
+        <div>
+          <label  style={{"marginBottom":"20px"}}>Is populer:</label>
+          <select onChange={selectInputHandler2}>
+            <option >Statü seçin</option>
+            <option value={"true"}>True</option>
+            <option value={"false"}>False</option>
+          </select>
+        </div>
+        
+      </div>
+      
+      <button type='submit' style={{ "position": "absolute", "right": "50px" , "bottom": "50px"}}>Kaydet</button>
+      </form>
+      <button style={{ "position": "absolute", "right": "200px" , "bottom": "50px"}} onClick={hideEdit}>Kapat</button>
+      </Modal>}
+
+      {cartIsShown && <Modal onHideCart={hideModal}>
+      <form className={classes.form} method="post" onSubmit={submitHandler}>
+      <label style={{"marginBottom":"20px"}}>Kategori Seçin:</label>
+      <select onChange={selectInputHandler}>
+      <option>Kategori seçin</option>
+        {categoriesToPrint}
+      </select>
+      <div>
+        <label  style={{"marginBottom":"20px"}}>Is populer:</label>
+        <select onChange={selectInputHandler2}>
+          <option >Statü seçin</option>
+          <option value={"true"}>True</option>
+          <option value={"false"}>False</option>
+        </select>
+      </div>
+      
+
+      <div  style={{"marginBottom":"20px"}}>
+        <input type="file" name="file" id="file" required onChange={fileInputHandler}/>
+      </div>
+      <div>
+        <input type="file" name="file2" id="file2" required onChange={fileInputHandler2}/>
+      </div>
+      <button style={{ "position": "absolute", "right": "200px" , "bottom": "50px"}} onClick={hideModal}>Kapat</button>
+      <button type='submit' style={{ "position": "absolute", "right": "50px" , "bottom": "50px"}}>Kaydet</button>
+      </form>
+        
+      </Modal>}
+      
+      
       <nav className="navbar navbar-expand-lg navbar-light bg-light px-5 "  >
         <div className="container-fluid ">
           <img style={{ height: "90px", width: "220px" }} className="navbar-brand" alt="printsanlogo" src={require("../../images/printsanlogo.png").default} />
@@ -64,7 +217,7 @@ const Admin = () => {
                 {productToPrint}
               </tbody>
             </table>
-              <button style={{ "position": "absolute", "right": "50px" }}>Yeni Ürün Ekle</button>
+              <button style={{ "position": "absolute", "right": "50px" }} onClick={showModal}>Yeni Ürün Ekle</button>
             </div>
           </div>
 
