@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./Pages/Anasayfa/Components/Header";
 import Footer from "./Pages/Anasayfa/Components/Footer";
-import React from "react";
+import React, { useState } from "react";
 import Anasayfa from "Pages/Anasayfa/Anasayfa";
 import AboutUs from "Pages/SirketProfili/AboutUs";
 import NotFound from "Pages/NotFound/NotFound";
@@ -18,12 +18,26 @@ import MediaDetail from "Pages/Medya/MedyaDetay/MediaDetail";
 import OpenPositionForm from "Pages/Career/OpenPositionForm";
 import JobAplly from "Pages/Career/JobApply";
 import Admin from "Pages/Admin/Admin";
+import Login from "Pages/Login/Login";
 
+function setToken(userToken) {
+  sessionStorage.setItem('token', JSON.stringify(userToken));
+}
+
+function getToken() {
+  const tokenString = sessionStorage.getItem('token');
+  const userToken = JSON.parse(tokenString);
+  return userToken?.token
+}
 
 function App() {
+  const token = getToken();
+
+ 
+
   return (
     <React.Fragment>
-      {!window.location.href.includes("Admin") &&
+      {!window.location.href.includes("Admin") && !window.location.href.includes("Login")  && 
       <>
       <Header />
       <Routes>
@@ -46,12 +60,19 @@ function App() {
       <Footer />
       </>
       }
+      
       <Routes>
-        <Route path="Admin"  element={<Admin />}/>
+        <Route path="Admin"  element={<Admin />}/>   
+      </Routes>
+
+      <Routes>
+      <Route path="Login"  element={<Login setToken={setToken} />}/>
       </Routes>
 
     </React.Fragment>
   );
 }
+
+
 
 export default App;
