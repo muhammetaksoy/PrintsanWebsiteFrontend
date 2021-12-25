@@ -8,7 +8,6 @@ const Media = () => {
         fetch("http://printsanaccess.online/api/Explore/GetArticles")
             .then((response) => response.json())
             .then(response => {
-                console.log(response)
                 setArticles(response)
             })
     }, []);

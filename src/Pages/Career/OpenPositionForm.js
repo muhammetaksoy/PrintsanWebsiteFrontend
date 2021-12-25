@@ -37,7 +37,6 @@ const OpenPositionForm = () => {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(formData)
             fetch(`http://printsanaccess.online/api/Increase/PostJobApplyDocument?jobApplicationId=${data.JobApplicationId}`, {
             method: 'POST',
             body: formData

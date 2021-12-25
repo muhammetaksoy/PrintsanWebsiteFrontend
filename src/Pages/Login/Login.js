@@ -21,8 +21,7 @@ async function loginUser(credentials) {
 
   .then(response=>{
     if(response.status===200){
-      console.log("success");
-        
+      window.location.assign("http://localhost:3000/Admin")
     }
     return response.json();
   }).then(data=>data.access_token)

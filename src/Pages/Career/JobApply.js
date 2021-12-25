@@ -16,7 +16,6 @@ const JobAplly = () => {
         setEnteredEmail(event.target.value);
     }
     const fileInputHandler = event => {
-        console.log(event.target.files[0])
         formData.append("file",event.target.files[0])
     }
     const submitHandler = (event) => {
@@ -35,7 +34,6 @@ const JobAplly = () => {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(formData)
             fetch(`http://printsanaccess.online/api/Increase/PostJobApplyDocument?jobApplicationId=${data.JobApplicationId}`, {
             method: 'POST',
             body: formData

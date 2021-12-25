@@ -3,6 +3,10 @@ import classes from './Admin.module.css';
 import Modal from '../Anasayfa/Components/UI/Modal';
 import { event } from 'jquery';
 const Admin = () => {
+  const token = getToken();
+  if(!token){
+    window.location.assign("http://localhost:3000/Login")
+  }
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -16,10 +20,22 @@ const Admin = () => {
     fetch("http://printsanaccess.online/api/Explore/GetActiveProducts")
       .then((response) => response.json())
       .then(response => setProducts(response))
-      fetch("http://printsanaccess.online/api/Admin/GetProductCategories")
+      fetch("http://printsanaccess.online/api/Admin/GetProductCategories",{
+        method:'GET',
+        headers:{
+          "Authorization":`Bearer ${token}`,
+          "Content-Type":"application/json"
+      }
+      })
       .then(response => response.json())
       .then(response => setCategories(response))
   }, []);
+  function getToken() {
+    const tokenString = sessionStorage.getItem('token');
+    const userToken = JSON.parse(tokenString);
+    return userToken
+  }
+  
 
   const showEdit = (event) => {
     setId(event.target.value)
@@ -81,6 +97,7 @@ const Admin = () => {
           PhotoPath2:""
         }),
         headers:{
+            "Authorization":`Bearer ${token}`,
             "Content-Type":"application/json; charset=UTF-8"
         }
     })
@@ -88,6 +105,9 @@ const Admin = () => {
     .then(data => {
         fetch(`http://printsanaccess.online/api/Admin/PostProductImages?productId=${data.productId}`, {
         method: 'POST',
+        headers:{
+          "Authorization":`Bearer ${token}`,
+        },
         body: formData
     }).then(a =>{
       setCartIsShown(false)
@@ -115,6 +135,7 @@ const Admin = () => {
             isActive:true
           }),
           headers:{
+              "Authorization":`Bearer ${token}`,
               "Content-Type":"application/json; charset=UTF-8"
           }
       })

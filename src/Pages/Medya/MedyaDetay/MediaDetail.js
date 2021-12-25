@@ -14,7 +14,6 @@ const MediaDetail = () => {
         fetch(`http://printsanaccess.online/api/Explore/GetSingleArticle?articleId=${id}`)
             .then((response) => response.json())
             .then(response => {
-                console.log(response)
                 setDetails(response)
             })
     }, [id]);
