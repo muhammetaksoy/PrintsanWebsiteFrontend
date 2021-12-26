@@ -44,6 +44,15 @@ const Admin = () => {
   const hideEdit = () => {
     setEditIsShown(false)
   }
+  const deleteItem = event => {
+    fetch(`http://printsanaccess.online/api/Admin/RemoveProduct?productId=${event.target.value}`,{
+      headers:{
+        "Authorization":`Bearer ${token}`,
+        "Content-Type":"application/json"
+    }
+    })
+    .then(data =>window.location.reload())
+  }
 
   const productToPrint = products.map(item => <tr key={item.ProductId} role="row" className="odd">
     <td className="table-column-pr-0">
@@ -58,9 +67,12 @@ const Admin = () => {
     </td>
     <td className={classes.td}>{item.isPopular ? "Popüler Ürün" : "Popüler Ürün Değil"}</td>
     <td><button value={item.ProductId} onClick={showEdit}>Düzenle</button></td>
+    <td><button value={item.ProductId} onClick={deleteItem}>Sil</button></td>
   </tr>)
   
   const categoriesToPrint = categories.map(item => <option value={item.Id}>{item.CategoryName}</option>)
+
+  
 
   const showModal = () => {
     setCartIsShown(true)
@@ -117,8 +129,6 @@ const Admin = () => {
     })
     }
      
-    
-    
 }
 
   const editSubmitHandler = event => {

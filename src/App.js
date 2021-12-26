@@ -19,6 +19,7 @@ import OpenPositionForm from "Pages/Career/OpenPositionForm";
 import JobAplly from "Pages/Career/JobApply";
 import Admin from "Pages/Admin/Admin";
 import Login from "Pages/Login/Login";
+import CreatePosition from "Pages/Admin/CreatePosition";
 
 function setToken(userToken) {
   sessionStorage.setItem('token', JSON.stringify(userToken));
@@ -37,7 +38,7 @@ function App() {
 
   return (
     <React.Fragment>
-      {!window.location.href.includes("Admin") && !window.location.href.includes("Login")  && 
+      {!window.location.href.includes("Admin") && !window.location.href.includes("Login") && !window.location.href.includes("BasvuruOlustur") && 
       <>
       <Header />
       <Routes>
@@ -67,6 +68,10 @@ function App() {
 
       <Routes>
       <Route path="Login"  element={<Login setToken={setToken} />}/>
+      </Routes>
+
+      <Routes>
+        <Route path="BasvuruOlustur"  element={<CreatePosition />}/>   
       </Routes>
 
     </React.Fragment>
