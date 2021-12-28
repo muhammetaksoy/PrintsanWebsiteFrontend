@@ -24,9 +24,11 @@ const ShowApplicants = () => {
     const applicant = applicants.map(item => <tr key={item.OpenPositionId} role="row" className="odd">
     <td className="table-column-pr-0">
     </td>
-    <td className="table-column-pl-0" style={{"paddingRight":"125px"}}>{item.FullName}</td>
-    <td className="table-column-pl-0" style={{"paddingRight":"125px"}}>{item.PhoneNumber}</td>
-    <td className="table-column-pl-0" style={{"paddingRight":"125px"}}><a href={item.ResumeUrl} target="_blank" rel="noreferrer">Görüntülemek için tıklayın</a></td>
+    <td className="table-column-pl-0" style={{"paddingRight":"100px"}}>{item.FullName}</td>
+    <td className="table-column-pl-0" style={{"paddingRight":"100px"}}>{item.PhoneNumber}</td>
+    <td className="table-column-pl-0" style={{"paddingRight":"100px"}}>{item.Email}</td>
+    <td className="table-column-pl-0" style={{"paddingRight":"100px"}}>{item.AppliedDate}</td>
+    <td className="table-column-pl-0" style={{"paddingRight":"100px"}}><a href={item.ResumeUrl} target="_blank" rel="noreferrer">Görüntülemek için tıklayın</a></td>
 
   </tr>)
     return (
@@ -45,9 +47,11 @@ const ShowApplicants = () => {
             <thead className="thead-light">
                 <tr role="row"><th scope="col" className="table-column-pr-0 sorting_disabled" aria-label="" >
                 </th>
-                  <th className="table-column-pl-0 sorting_disabled" aria-label="image" style={{"paddingRight":"125px" }}>Başvuran</th>
-                  <th className="table-column-pl-0 sorting_disabled" aria-label="image" style={{"paddingRight":"125px" }}>Tel No</th>
-                  <th className="sorting" aria-controls="datatable" aria-label="Status: activate to sort column ascending" style={{ "paddingRight":"125px" }}>CV</th>
+                  <th className="table-column-pl-0 sorting_disabled" aria-label="image" style={{"paddingRight":"100px" }}>Başvuran</th>
+                  <th className="table-column-pl-0 sorting_disabled" aria-label="image" style={{"paddingRight":"100px" }}>Tel No</th>
+                  <th className="table-column-pl-0 sorting_disabled" aria-label="image" style={{"paddingRight":"100px" }}>Email</th>
+                  <th className="table-column-pl-0 sorting_disabled" aria-label="image" style={{"paddingRight":"100px" }}>Başvuru Tarihi</th>
+                  <th className="sorting" aria-controls="datatable" aria-label="Status: activate to sort column ascending" style={{ "paddingRight":"100px" }}>CV</th>
                 </tr>
             </thead>
             <tbody>
