@@ -23,15 +23,39 @@ const MediaDetail = () => {
         <div className={classes.container}>
             <div className={classes.card}>
                 <div className='d-flex justify-content-between'>
-                    <ReactFancyBox
-                        className={classes.image}
-                        image={details.PhotoUrl1} />
-                    <ReactFancyBox
-                        image={details.PhotoUrl2} />
-                    <ReactFancyBox
-                        image={details.PhotoUrl3} />
-                    <ReactFancyBox
-                        image={details.PhotoUrl4} />
+                    <div>
+                        {
+                            !details.PhotoUrl1 == " " &&
+                            <ReactFancyBox
+                                className={classes.image}
+                                image={details.PhotoUrl1} />
+                        }
+                    </div>
+                    <div>
+                        {
+                            !details.PhotoUrl2 == " " &&
+                            <ReactFancyBox
+                                className={classes.image}
+                                image={details.PhotoUrl2} />
+                        }
+                    </div>
+                    <div>
+                        {
+                            !details.PhotoUrl3 == " " &&
+                            <ReactFancyBox
+                                className={classes.image}
+                                image={details.PhotoUrl3} />
+                        }
+                    </div>
+                    <div>
+                        {
+                            !details.PhotoUrl4 == " " &&
+                            <ReactFancyBox
+                                className={classes.image}
+                                image={details.PhotoUrl4} />
+                        }
+                    </div>
+
 
                 </div>
 

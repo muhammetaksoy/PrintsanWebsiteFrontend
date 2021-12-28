@@ -19,9 +19,14 @@ const Media = () => {
             {
                 articles.map(item => (
                     <div className={classes.card}>
+
+
                         <div>
-                            <img src={item.PhotoUrl1} className={classes.img} alt="Medya Resim  " width="600" height="200" />
+                            {
+                                item.PhotoUrl1 ? <img src={item.PhotoUrl1} className={classes.img} alt="Medya Resim  " width="600" height="200" /> : "-"
+                            }
                         </div>
+
                         <div className={classes.cardBody}>
                             <span className={classes.tagRed}>{item.PublishedDate.slice(0, 10)}</span>
                             <h4>{item.Header}</h4>
