@@ -38,6 +38,7 @@ const JobAplly = () => {
             method: 'POST',
             body: formData
         })
+        .catch(error => console.log(error))
             
         })
         

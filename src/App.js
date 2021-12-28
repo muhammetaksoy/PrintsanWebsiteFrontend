@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./Pages/Anasayfa/Components/Header";
 import Footer from "./Pages/Anasayfa/Components/Footer";
-import React, { useState } from "react";
+import React from "react";
 import Anasayfa from "Pages/Anasayfa/Anasayfa";
 import AboutUs from "Pages/SirketProfili/AboutUs";
 import NotFound from "Pages/NotFound/NotFound";
@@ -20,6 +20,7 @@ import JobAplly from "Pages/Career/JobApply";
 import Admin from "Pages/Admin/Admin";
 import Login from "Pages/Login/Login";
 import CreatePosition from "Pages/Admin/CreatePosition";
+import ShowApplicants from "Pages/Admin/ShowApplicants";
 
 function setToken(userToken) {
   sessionStorage.setItem('token', JSON.stringify(userToken));
@@ -33,12 +34,9 @@ function getToken() {
 
 function App() {
   const token = getToken();
-
- 
-
   return (
     <React.Fragment>
-      {!window.location.href.includes("Admin") && !window.location.href.includes("Login") && !window.location.href.includes("BasvuruOlustur") && 
+      {!window.location.href.includes("Admin") && !window.location.href.includes("Login") && !window.location.href.includes("BasvuruOlustur") && !window.location.href.includes("Basvurular") && 
       <>
       <Header />
       <Routes>
@@ -72,6 +70,10 @@ function App() {
 
       <Routes>
         <Route path="BasvuruOlustur"  element={<CreatePosition />}/>   
+      </Routes>
+
+      <Routes>
+        <Route path="Basvurular"  element={<ShowApplicants />}/>   
       </Routes>
 
     </React.Fragment>

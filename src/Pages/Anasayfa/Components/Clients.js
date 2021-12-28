@@ -12,13 +12,18 @@ const Clients = () => {
         fetch("http://printsanaccess.online/api/Explore/GetReferences")
             .then((response) => response.json())
             .then(response => setImages(response))
+            .catch(error => console.log(error))
     }, []);
 
-    const referances = images.map(item => (
-        <div key={item.ReferenceId} className="col-lg-2 col-md-4 col-6 ">
-            <img className={classes.img} src={item.PhotoUrl} alt="aaa" />
-        </div>
-    ))
+    let referances = [];
+    if(images.length>0){
+        referances = images.map(item => (
+            <div key={item.ReferenceId} className="col-lg-2 col-md-4 col-6 ">
+                <img className={classes.img} src={item.PhotoUrl} alt="aaa" />
+            </div>
+        ))
+    }
+    
 
 
     const responsive = {

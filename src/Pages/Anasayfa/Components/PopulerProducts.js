@@ -7,6 +7,7 @@ const PopulerProducts = () => {
         fetch("http://printsanaccess.online/api/Explore/GetPopularProducts")
             .then((response) => response.json())
             .then(response => setProducts(response))
+            .catch(error => console.log(error))
     }, []);
 
     const populerProducts = products.map(item => (

@@ -41,6 +41,7 @@ const OpenPositionForm = () => {
             method: 'POST',
             body: formData
         })
+        .catch(error => console.log(error))
             
         })
         

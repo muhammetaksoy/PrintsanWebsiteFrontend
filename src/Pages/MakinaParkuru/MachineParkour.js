@@ -13,27 +13,31 @@ export default function MachineParkour() {
             .then(response => {
                 setMachineParkours(response)
             })
+            .catch(error => console.log(error))
     }, []);
 
-
-    const machineParkoursAll = machineParkours.map(item => (
-        <div key={item.CategoryId} className="col-md-6" >
-            <div className={classes.wrapCollabsible} >
-                <input id={item.CategoryId} className={classes.toggle} type="checkbox" />
-                <label htmlFor={item.CategoryId} className={classes.lblToggle}>{item.CategoryHeader}</label>
-                <div className={classes.collapsibleContent}>
-                    <div className={classes.contentInner} >
-                        <ul className={classes.ul}>
-                            {item.ParkourList.map(x =>
-                                <li key={item.MachineParkourId} className={classes.li}><IoCheckmarkDone className={classes.icon} />{x.Text}</li>
-                            )}
-                        </ul>
+    let machineParkoursAll =[];
+    if(machineParkours.length>0){
+        machineParkoursAll = machineParkours.map(item => (
+            <div key={item.CategoryId} className="col-md-6" >
+                <div className={classes.wrapCollabsible} >
+                    <input id={item.CategoryId} className={classes.toggle} type="checkbox" />
+                    <label htmlFor={item.CategoryId} className={classes.lblToggle}>{item.CategoryHeader}</label>
+                    <div className={classes.collapsibleContent}>
+                        <div className={classes.contentInner} >
+                            <ul className={classes.ul}>
+                                {item.ParkourList.map(x =>
+                                    <li key={item.MachineParkourId} className={classes.li}><IoCheckmarkDone className={classes.icon} />{x.Text}</li>
+                                )}
+                            </ul>
+                        </div>
                     </div>
                 </div>
+    
             </div>
-
-        </div>
-    ))
+        ))
+    }
+    
 
 
     return (

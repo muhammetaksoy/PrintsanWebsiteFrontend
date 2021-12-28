@@ -15,6 +15,7 @@ export default function Products() {
                 setCategory(response)
                 setProductCopy(response)
             })
+            .catch(error => console.log(error))
     }, []);
 
     const onClickHandler = (e) => {
@@ -32,19 +33,23 @@ export default function Products() {
     let categoryArray = Array.from(categories);
     const categoryList = categoryArray.map(item =><li value={item} className={`${classes.li} list-group-item`} key={item} onClick={onClickHandler}>{item}</li> )
 
-    const productsAll = productCopy.map(item => (
-        <div key={item.ProductId}>
-            <div className="card border-0" >
-                <div className={classes.wrap}>
-                    <img className={classes.img} src={item.PhotoUrlMain} alt="Card cap" onMouseEnter={e => item.PhotoUrlFocused ? e.currentTarget.src = item.PhotoUrlFocused : e.currentTarget.src = item.PhotoUrlMain} onMouseLeave={e => e.currentTarget.src = item.PhotoUrlMain} />
-                    <div className="card-body">
-                        <h5 className="card-title text-center text-danger">{item.CategoryName}</h5>
+    let productsAll =[];
+    if(productCopy.length>0){
+        productsAll = productCopy.map(item => (
+            <div key={item.ProductId}>
+                <div className="card border-0" >
+                    <div className={classes.wrap}>
+                        <img className={classes.img} src={item.PhotoUrlMain} alt="Card cap" onMouseEnter={e => item.PhotoUrlFocused ? e.currentTarget.src = item.PhotoUrlFocused : e.currentTarget.src = item.PhotoUrlMain} onMouseLeave={e => e.currentTarget.src = item.PhotoUrlMain} />
+                        <div className="card-body">
+                            <h5 className="card-title text-center text-danger">{item.CategoryName}</h5>
+                        </div>
                     </div>
                 </div>
+                <br />
             </div>
-            <br />
-        </div>
-    ))
+        ))
+    }
+    
 
 
     return (

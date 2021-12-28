@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import classes from './Admin.module.css';
 import Modal from '../Anasayfa/Components/UI/Modal';
-import { event } from 'jquery';
 const Admin = () => {
   const token = getToken();
   if(!token){
@@ -20,6 +19,7 @@ const Admin = () => {
     fetch("http://printsanaccess.online/api/Explore/GetActiveProducts")
       .then((response) => response.json())
       .then(response => setProducts(response))
+      .catch(error => console.log(error))
       fetch("http://printsanaccess.online/api/Admin/GetProductCategories",{
         method:'GET',
         headers:{
@@ -29,6 +29,7 @@ const Admin = () => {
       })
       .then(response => response.json())
       .then(response => setCategories(response))
+      .catch(error => console.log(error))
   }, []);
   function getToken() {
     const tokenString = sessionStorage.getItem('token');
@@ -52,14 +53,16 @@ const Admin = () => {
     }
     })
     .then(data =>window.location.reload())
+    .catch(error => console.log(error))
   }
-
-  const productToPrint = products.map(item => <tr key={item.ProductId} role="row" className="odd">
+  let productToPrint =[]
+  if(products){
+    productToPrint = products.map(item => <tr key={item.ProductId} role="row" className="odd">
     <td className="table-column-pr-0">
     </td>
     <td className="table-column-pl-0">
       <div className="avatar avatar-sm avatar-circle mr-2">
-        <img className={classes.img} src={item.PhotoUrlMain} alt="Image Description" />
+        <img className={classes.img} src={item.PhotoUrlMain} alt={item.CategoryName} />
       </div>
     </td>
     <td className={classes.td}>
@@ -69,11 +72,13 @@ const Admin = () => {
     <td><button value={item.ProductId} onClick={showEdit}>Düzenle</button></td>
     <td><button value={item.ProductId} onClick={deleteItem}>Sil</button></td>
   </tr>)
+  }
   
-  const categoriesToPrint = categories.map(item => <option value={item.Id}>{item.CategoryName}</option>)
-
+  let categoriesToPrint= []
+  if(categories.length >0){
+    categoriesToPrint = categories.map(item => <option value={item.Id}>{item.CategoryName}</option>)
+  }
   
-
   const showModal = () => {
     setCartIsShown(true)
   }
@@ -125,8 +130,10 @@ const Admin = () => {
       setCartIsShown(false)
       document.location.reload()
     })
+    .catch(error => console.log(error))
         
     })
+    .catch(error => console.log(error))
     }
      
 }
@@ -149,6 +156,7 @@ const Admin = () => {
               "Content-Type":"application/json; charset=UTF-8"
           }
       })
+      .catch(error => console.log(error))
       setEditIsShown(false)
       document.location.reload()
     }
@@ -212,8 +220,12 @@ const Admin = () => {
       
       <nav className="navbar navbar-expand-lg navbar-light bg-light px-5 "  >
         <div className="container-fluid ">
-          <img style={{ height: "90px", width: "220px" }} className="navbar-brand" alt="printsanlogo" src={require("../../images/printsanlogo.png").default} />
-          <span className={classes.title}>Admin Paneli</span>
+          <a href='http://localhost:3000/' className="nav-link " aria-current="page">
+            <img style={{ height: "90px", width: "220px" }} className="navbar-brand" alt="printsanlogo" src={require("../../images/printsanlogo.png").default} />
+          </a>
+          <a href='http://localhost:3000/BasvuruOlustur'  className={classes.title}>İş İlanı Oluştur</a>
+          <a href='http://localhost:3000/Basvurular'  className={classes.title}>Başvurular</a>
+          <a href='http://localhost:3000/Admin' className={classes.title}>Admin Paneli</a>
         </div>
       </nav>
       <section className={classes.section}>
@@ -238,9 +250,9 @@ const Admin = () => {
               <thead className="thead-light">
                 <tr role="row"><th scope="col" className="table-column-pr-0 sorting_disabled" aria-label="" >
                 </th>
-                  <th className="table-column-pl-0 sorting_disabled" aria-label="image" style={{ "width": "296.688px;" }}>Fotoğraf</th>
-                  <th className="sorting" aria-controls="datatable" aria-label="Status: activate to sort column ascending" style={{ "width": "165.203px;" }}>Kategori</th>
-                  <th className="sorting" aria-controls="datatable" aria-label="Type: activate to sort column ascending" style={{ "width": "214.875px;" }}>Favori Ürün</th>
+                  <th className="table-column-pl-0 sorting_disabled" aria-label="image">Fotoğraf</th>
+                  <th className="sorting" aria-controls="datatable" aria-label="Status: activate to sort column ascending">Kategori</th>
+                  <th className="sorting" aria-controls="datatable" aria-label="Type: activate to sort column ascending">Favori Ürün</th>
                 </tr>
               </thead>
 

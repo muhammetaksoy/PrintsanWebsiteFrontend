@@ -17,6 +17,12 @@
 
 .title{
     font-size:2rem ;
+    text-decoration: none;
+    color: inherit; 
+}
+
+.title:hover{
+    color :#d9232d
 }
 
 .form {

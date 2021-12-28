@@ -8,6 +8,7 @@ export default function Politics() {
         fetch("http://printsanaccess.online/api/Explore/GetPolicies")
             .then((response) => response.json())
             .then(response => setPolitics(response))
+            .catch(error => console.log(error))
     }, []);
 
     const politicsAll = politics.map(item => (

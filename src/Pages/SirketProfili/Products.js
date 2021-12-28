@@ -15,10 +15,12 @@ export default function Products() {
                 setCategory(response)
                 setProductCopy(response)
             })
+            .catch(error => console.log(error))
     }, []);
     
-
-    const productsAll = productCopy.map(item => (
+    let productsAll = [];
+    if(productCopy.length>0){
+        productsAll = productCopy.map(item => (
         <div key={item.ProductId}>
             <div className="card border-0" >
                 <div className={classes.wrap} >
@@ -31,6 +33,8 @@ export default function Products() {
             <br />
         </div>
     ))
+    }
+    
 
     const onClickHandler = (e) => {
         //Products_active__ff4XP classı "classes.active" in tarayıcıda derlenmiş hali

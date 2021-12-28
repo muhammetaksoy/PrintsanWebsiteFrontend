@@ -41,6 +41,7 @@ const Contact = () => {
                 "Content-Type":"application/json; charset=UTF-8"
             }
         })
+        .catch(error => console.log(error))
         
         setEnteredName('');
         setEnteredPhone('');

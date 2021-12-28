@@ -16,6 +16,7 @@ const MediaDetail = () => {
             .then(response => {
                 setDetails(response)
             })
+            .catch(error => console.log(error))
     }, [id]);
 
     return (

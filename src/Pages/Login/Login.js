@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./Login.css";
-import { Link } from "react-router-dom";
 
 async function loginUser(credentials) {
   return fetch("http://printsanaccess.online/getToken", {
@@ -22,7 +21,8 @@ async function loginUser(credentials) {
       }
       return response.json();
     })
-    .then((data) => data.access_token);
+    .then((data) => data.access_token)
+    .catch(error => console.log(error))
 }
 
 export default function Login({ setToken }) {
@@ -51,9 +51,7 @@ export default function Login({ setToken }) {
             src={require("../../images/printsanlogo.png").default}
           />
 
-          {/* <Link to="/Anasayfa" className="nav-link " aria-current="page">
-            Anasayfaya Git
-          </Link> */}
+          
         </div>
       </nav>
 

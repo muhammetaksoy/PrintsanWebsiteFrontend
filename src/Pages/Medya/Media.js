@@ -10,6 +10,7 @@ const Media = () => {
             .then(response => {
                 setArticles(response)
             })
+            .catch(error => console.log(error))
     }, []);
 
     return (

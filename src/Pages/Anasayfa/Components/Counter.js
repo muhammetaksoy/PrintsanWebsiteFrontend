@@ -19,6 +19,7 @@ const Counter = () => {
                 setNumberProduct(response.NumberProduct)
                 setProduceCapacity(response.ProduceCapacity)
             })
+            .catch(error => console.log(error))
             
     },[]);
 

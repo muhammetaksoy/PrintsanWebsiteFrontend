@@ -1,4 +1,5 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
+import classes from './CreatePosition.module.css';
 
 const CreatePosition = () => {
     
@@ -14,28 +15,51 @@ const CreatePosition = () => {
 
     const titleInputHandler = event => {
         setEnteredTitle(event.target.value)
-        console.log(enteredTitle)
-        
     }
 
     const descriptionInputHandler = event => {
         setEnteredDescription(event.target.value)
         
     }
-    fetch("http://printsanaccess.online/api/Explore/GetOpenPositions")
-    .then(response => response.json())
-    .then(resp => setOpenPositions(resp))
+    useEffect(() => {
+        fetch("http://printsanaccess.online/api/Explore/GetOpenPositions")
+        .then(response => response.json())
+        .then(resp => setOpenPositions(resp))
+        .catch(error => console.log(error))
+    }, [])
+    
 
-    const positions = openPositions.map(item => <li key={item.OpenPositionId}><p>{item.JobTitle}</p><p>{item.Description}</p> </li>)
+    const deleteItem = event => {
+        fetch(`http://printsanaccess.online/api/Admin/RemoveOpenPosition?openPositionId=${event.target.value}`,{
+        headers:{
+        "Authorization":`Bearer ${token}`,
+        "Content-Type":"application/json"
+        }
+        })
+        .catch(error => console.log(error))
+        .then(data =>window.location.reload())
+    }
+    let positions = []
+    if(openPositions.length >0) {
+        positions = openPositions.map(item => <tr key={item.OpenPositionId} role="row" className="odd">
+    <td className="table-column-pr-0">
+    </td>
+    <td className="table-column-pl-0" style={{"paddingRight":"125px"}}>{item.JobTitle}</td>
+    <td className="table-column-pl-0" style={{"paddingRight":"125px"}}>
+      {item.Description}
+    </td>
+    <td><button value={item.OpenPositionId} onClick={deleteItem}>Sil</button></td>
+  </tr>)
+    }
+    
 
     const submitHandler = event => {
         event.preventDefault();
         fetch("http://printsanaccess.online/api/Admin/CreateNewOpenPosition",{
             method:'POST',
             body: JSON.stringify({
-                JobTitle: enteredTitle,
-                Description: enteredDescription
-                
+                Description: enteredDescription,
+                JobTitle: enteredTitle
             }),
             headers:{
                 "Authorization":`Bearer ${token}`,
@@ -44,9 +68,19 @@ const CreatePosition = () => {
             
         })
         .then(response => console.log(response))
+        .catch(error => console.log(error))
     }
     return(
         <React.Fragment>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light px-5 "  >
+                <div className="container-fluid ">
+                <a href='http://localhost:3000/' className="nav-link " aria-current="page">
+                    <img style={{ height: "90px", width: "220px" }} className="navbar-brand" alt="printsanlogo" src={require("../../images/printsanlogo.png").default} />
+                </a>
+                <a href='http://localhost:3000/Basvurular'  className={classes.title}>Başvurular</a>
+                <a href="http://localhost:3000/Admin" className={classes.title}>Admin Paneli</a>
+                </div>
+            </nav>
         <h2 className="text-center container-fluid  p-2 alert alert-danger border-0 rounded-0 " style={{ "width": "85%","fontSize": "2.8rem" }}>İlan Oluştur</h2>
         <div className="container">
         
@@ -65,12 +99,19 @@ const CreatePosition = () => {
 
         </div>
         <h2 className="text-center container-fluid  p-2 alert alert-danger border-0 rounded-0 " style={{ "width": "85%","fontSize": "2.8rem" }}>Açık İlanlar</h2>
-        <div className="row">
-            <ul>
+        <div className="container"> 
+            <thead className="thead-light">
+                <tr role="row"><th scope="col" className="table-column-pr-0 sorting_disabled" aria-label="" >
+                </th>
+                  <th className="table-column-pl-0 sorting_disabled" aria-label="image" style={{"paddingRight":"125px" }}>Başlık</th>
+                  <th className="sorting" aria-controls="datatable" aria-label="Status: activate to sort column ascending" style={{ "paddingRight":"125px" }}>Açıklama</th>
+                </tr>
+            </thead>
+            <tbody>
                 {positions}
-            </ul>
+            </tbody>
         </div>
-        
+            
     </React.Fragment>
     )
 }

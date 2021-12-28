@@ -7,17 +7,21 @@ const AboutUs = () => {
         fetch("http://printsanaccess.online/api/Explore/GetCertificates")
             .then((response) => response.json())
             .then(response => setCertificates(response))
+            .catch(error => console.log(error))
     }, []);
-
-    const certificateAll = certificates.map(item => (
-        <div className="col-lg-4 text-center " key={item.CertificateId}>
-
-            <a href={item.PDFUrl} target="_blank" rel="noreferrer">
-                <img src={item.PhotoUrl} alt={item.Description} className={classes.img} /></a>
-
-
-        </div>
-    ))
+    let certificateAll =[];
+    if(certificates.length>0){
+        certificateAll = certificates.map(item => (
+            <div className="col-lg-4 text-center " key={item.CertificateId}>
+    
+                <a href={item.PDFUrl} target="_blank" rel="noreferrer">
+                    <img src={item.PhotoUrl} alt={item.Description} className={classes.img} /></a>
+    
+    
+            </div>
+        ))
+    }
+    
     return (
         <section className={classes.section} >
             <div className="container-fluid" style={{ "width": "85%"}}>
