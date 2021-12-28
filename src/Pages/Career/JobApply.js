@@ -61,7 +61,7 @@ const JobAplly = () => {
                         <input value={enteredPhone} type="text" className="form-control" name="phone" id="phone" pattern="[1-9]{1}[0-9]{9}" placeholder="Telefon(5xxxxxxxxx)" required onChange={phoneInputHandler}/>
                     </div>
                     <div className={`form-group mt-3 ${classes.input}`}>
-                        <input value={enteredEmail} type="text" className="form-control" name="email" id="email" placeholder="Email" required onChange={emailInputHandler}/>
+                        <input value={enteredEmail} type="email" className="form-control" name="email" id="email" placeholder="Email" required onChange={emailInputHandler}/>
                     </div>
                     <div className= {`form-group mt-3 ${classes.input}`}>
                         <input type="file" accept=".doc,.docx,.pdf" name="file" id="file" required onChange={fileInputHandler}/>
