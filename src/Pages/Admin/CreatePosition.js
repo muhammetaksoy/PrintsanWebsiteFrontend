@@ -55,6 +55,8 @@ const CreatePosition = () => {
 
     const submitHandler = event => {
         event.preventDefault();
+        console.log(enteredDescription)
+        console.log(enteredTitle)
         fetch("http://printsanaccess.online/api/Admin/CreateNewOpenPosition",{
             method:'POST',
             body: JSON.stringify({
