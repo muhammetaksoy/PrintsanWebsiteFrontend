@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./Login.css";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-async function loginUser(credentials) {
+
+toast.configure();
+function loginUser(credentials) {
   return fetch("http://printsanaccess.online/getToken", {
     method: "POST",
     headers: {
@@ -17,12 +21,35 @@ async function loginUser(credentials) {
   })
     .then((response) => {
       if (response.status === 200) {
-        window.location.assign("http://localhost:3000/Admin");
+        toast.success('Giriş işlemi başarılı', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored'
+        });
+        setTimeout(() => {
+          window.location.assign("http://localhost:3000/Admin");
+        }, 2000);
+      }
+      if (response.status === 400) {
+        toast.error('Kullanıcı adı veya Şifre yanlış', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored'
+        });
       }
       return response.json();
     })
     .then((data) => data.access_token)
-    .catch(error => console.log(error))
 }
 
 export default function Login({ setToken }) {
@@ -40,6 +67,8 @@ export default function Login({ setToken }) {
     setToken(token);
   };
 
+
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light px-5 ">
@@ -50,8 +79,6 @@ export default function Login({ setToken }) {
             alt="printsanlogo"
             src={require("../../images/printsanlogo.png").default}
           />
-
-          
         </div>
       </nav>
 
