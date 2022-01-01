@@ -10,7 +10,7 @@ const OpenPositionForm = () => {
     const [enteredPhone, setEnteredPhone] = useState('');
     const [enteredEmail, setEnteredEmail] = useState('');
     const formData = new FormData();
-
+    let isValid = false;
     const nameInputHandler = event => {
         setEnteredName(event.target.value);
     }
@@ -20,8 +20,16 @@ const OpenPositionForm = () => {
     const emailInputHandler = event => {
         setEnteredEmail(event.target.value);
     }
+    if(enteredName && enteredPhone && enteredEmail.includes("@")){
+        isValid= true;
+    }
     const fileInputHandler = event => {
-        formData.append("file",event.target.files[0])
+        if(isValid){
+            formData.append("file",event.target.files[0])
+        }else {
+            event.target.value = ""
+        }
+        
     }
     const submitHandler = (event) => {
         event.preventDefault();
@@ -67,7 +75,6 @@ const OpenPositionForm = () => {
                 theme: 'colored'
               });
             }
-                return response.json();
           })
             
         })
