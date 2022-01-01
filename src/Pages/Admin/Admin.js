@@ -249,7 +249,20 @@ const Admin = () => {
   }
   const logOutHandler = () => {
     sessionStorage.removeItem('token');
-    window.location.assign("http://localhost:3000/")
+        toast.success('Admin oturumu kapatıldı', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored'
+        });
+        setTimeout(() => {
+          window.location.assign("http://localhost:3000/Anasayfa");
+        },1000);
+
   }
   return (
     <div>

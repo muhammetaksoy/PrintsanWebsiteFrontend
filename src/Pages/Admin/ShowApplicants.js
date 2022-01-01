@@ -1,6 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import classes from './CreatePosition.module.css';
 import {IoLogOutOutline} from "react-icons/io5";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ShowApplicants = () => {
     const token = getToken();
@@ -34,7 +36,20 @@ const ShowApplicants = () => {
   </tr>)
   const logOutHandler = () => {
     sessionStorage.removeItem('token');
-    window.location.assign("http://localhost:3000/")
+    sessionStorage.removeItem('token');
+    toast.success('Admin oturumu kapatıldı', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'colored'
+    });
+    setTimeout(() => {
+      window.location.assign("http://localhost:3000/Anasayfa");
+    },1000);
   }
     return (
         <React.Fragment>

@@ -18,7 +18,7 @@ const Media = () => {
             <h2 className="text-center w-100  p-2 alert alert-danger border-0 rounded-0 " style={{ "width": "85%", "fontSize": "2.8rem" }}>Medya</h2>
             {
                 articles.map(item => (
-                    <div className={classes.card}>
+                    <div className={classes.card} key={item.ArticleId}>
 
 
                         <div>
