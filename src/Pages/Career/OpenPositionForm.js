@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useParams } from 'react-router-dom';
 import classes from './OpenPositionForm.module.css'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const OpenPositionForm = () => {
     const { id } = useParams()
@@ -40,8 +42,33 @@ const OpenPositionForm = () => {
             fetch(`http://printsanaccess.online/api/Increase/PostJobApplyDocument?jobApplicationId=${data.JobApplicationId}`, {
             method: 'POST',
             body: formData
-        })
-        .catch(error => console.log(error))
+        }).then((response) => {
+            if (response.status === 200) {
+              toast.success('İlana Başvuru Başarılı', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored'
+              });
+            }
+            if (response.status === 400) {
+              toast.error('İlana Başvuru Başarısız', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored'
+              });
+            }
+                return response.json();
+          })
             
         })
         

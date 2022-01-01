@@ -60,7 +60,7 @@ const MediaDetail = () => {
                 </div>
 
                 <div className={classes.cardBody}>
-                    <span className={classes.tagRed}>{details.PublishedDate}</span>
+                    <span className={classes.tagRed}>{details.PublishedDateStr }</span>
                     <h4>{details.Header}</h4>
                     <p>{details.Text}</p>
                 </div>

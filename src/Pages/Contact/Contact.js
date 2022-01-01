@@ -1,6 +1,8 @@
 import React,{useState} from 'react';
 import { IoLocationOutline,IoMailOutline,IoCallOutline } from "react-icons/io5";
 import classes from './Contact.module.css';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
     const [enteredName, setEnteredName] = useState('');
@@ -41,7 +43,33 @@ const Contact = () => {
                 "Content-Type":"application/json; charset=UTF-8"
             }
         })
-        .catch(error => console.log(error))
+        .then((response) => {
+            if (response.status === 200) {
+              toast.success('Mesajınız başarılı bir şekilde gönderilmiştir', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored'
+              });
+            }
+            if (response.status === 400) {
+              toast.error('Mesaj gönderme başarısız', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored'
+              });
+            }
+                return response.json();
+          })
         
         setEnteredName('');
         setEnteredPhone('');

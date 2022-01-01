@@ -56,7 +56,7 @@ const Footer = () => {
                                             <Link to="/Medya" className="nav-link text-white text-decoration-none " aria-current="page">Medya</Link>
                                         </li>
                                         <li className="my-2">
-                                            <Link to="/Kariyer" className="nav-link text-white text-decoration-none " aria-current="page">Kariyer</Link>
+                                            <Link to="/AcikPozisyonlar" className="nav-link text-white text-decoration-none " aria-current="page">Kariyer</Link>
 
                                         </li>
                                         <li className="my-2">

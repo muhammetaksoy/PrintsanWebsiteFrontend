@@ -28,7 +28,7 @@ const Media = () => {
                         </div>
 
                         <div className={classes.cardBody}>
-                            <span className={classes.tagRed}>{item.PublishedDate.slice(0, 10)}</span>
+                            <span className={classes.tagRed}>{item.PublishedDateStr}</span>
                             <h4>{item.Header}</h4>
                             <p>{item.Text.substring(0, 150)}...</p>
                         </div>

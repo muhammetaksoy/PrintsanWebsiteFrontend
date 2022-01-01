@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import classes from './OpenPositionForm.module.css'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const JobAplly = () => {
     const [enteredName, setEnteredName] = useState('');
     const [enteredPhone, setEnteredPhone] = useState('');
     const [enteredEmail, setEnteredEmail] = useState('');
+    
     const formData = new FormData();
 
     const nameInputHandler = event => {
@@ -37,9 +40,33 @@ const JobAplly = () => {
             fetch(`http://printsanaccess.online/api/Increase/PostJobApplyDocument?jobApplicationId=${data.JobApplicationId}`, {
             method: 'POST',
             body: formData
-        })
-        .catch(error => console.log(error))
-            
+        }).then((response) => {
+            if (response.status === 200) {
+              toast.success('Başvuru Başarılı', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored'
+              });
+            }
+            if (response.status === 400) {
+              toast.error('Başvuru Başarısız', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored'
+              });
+            }
+                return response.json();
+          })
         })
         
         setEnteredName('');
