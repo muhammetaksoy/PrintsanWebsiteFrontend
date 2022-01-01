@@ -6,6 +6,7 @@ const JobAplly = () => {
     const [enteredName, setEnteredName] = useState('');
     const [enteredPhone, setEnteredPhone] = useState('');
     const [enteredEmail, setEnteredEmail] = useState('');
+    let isValid = false;
     
     const formData = new FormData();
 
@@ -18,11 +19,19 @@ const JobAplly = () => {
     const emailInputHandler = event => {
         setEnteredEmail(event.target.value);
     }
+    if(enteredName && enteredPhone && enteredEmail.includes("@")){
+        isValid= true;
+    }
     const fileInputHandler = event => {
-        formData.append("file",event.target.files[0])
+        if(isValid){
+            formData.append("file",event.target.files[0])
+        }else {
+            event.target.value = ""
+        }
+        
     }
     const submitHandler = (event) => {
-        event.preventDefault();
+            event.preventDefault();
          fetch("http://printsanaccess.online/api/Increase/PostJobApply", {
             method: 'POST',
             body: JSON.stringify({
@@ -65,14 +74,12 @@ const JobAplly = () => {
                 theme: 'colored'
               });
             }
-                return response.json();
           })
         })
         
         setEnteredName('');
         setEnteredPhone('');
         setEnteredEmail('');
-        
     }
     return (
         <React.Fragment>
