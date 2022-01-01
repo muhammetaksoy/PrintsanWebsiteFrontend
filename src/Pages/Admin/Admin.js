@@ -3,6 +3,7 @@ import classes from './Admin.module.css';
 import Modal from '../Anasayfa/Components/UI/Modal';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {IoLogOutOutline} from "react-icons/io5";
 const Admin = () => {
   const token = getToken();
   if (!token) {
@@ -246,6 +247,10 @@ const Admin = () => {
     }
 
   }
+  const logOutHandler = () => {
+    sessionStorage.removeItem('token');
+    window.location.assign("http://localhost:3000/")
+  }
   return (
     <div>
       {editIsShown && <Modal onHideCart={hideEdit}>
@@ -310,6 +315,7 @@ const Admin = () => {
           <a href='http://localhost:3000/BasvuruOlustur' className={classes.title}>İş İlanı Oluştur</a>
           <a href='http://localhost:3000/Basvurular' className={classes.title}>Başvurular</a>
           <a href='http://localhost:3000/Admin' className={classes.title}>Admin Paneli</a>
+          <IoLogOutOutline className={classes.icon} onClick={logOutHandler}/>
 
         </div>
       </nav>
