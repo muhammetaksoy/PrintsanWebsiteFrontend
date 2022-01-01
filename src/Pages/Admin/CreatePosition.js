@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import classes from './CreatePosition.module.css';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {IoLogOutOutline} from "react-icons/io5";
 
 const CreatePosition = () => {
 
@@ -130,6 +131,10 @@ const CreatePosition = () => {
             return response.json();
         })
     }
+    const logOutHandler = () => {
+        sessionStorage.removeItem('token');
+        window.location.assign("http://localhost:3000/")
+      }
     return (
         <React.Fragment>
             <nav className="navbar navbar-expand-lg navbar-light bg-light px-5 "  >
@@ -139,6 +144,7 @@ const CreatePosition = () => {
                     </a>
                     <a href='http://localhost:3000/Basvurular' className={classes.title}>Başvurular</a>
                     <a href="http://localhost:3000/Admin" className={classes.title}>Admin Paneli</a>
+                    <IoLogOutOutline className={classes.icon} onClick={logOutHandler}/>
                 </div>
             </nav>
             <h2 className="text-center container-fluid  p-2 alert alert-danger border-0 rounded-0 " style={{ "width": "85%", "fontSize": "2.8rem" }}>İlan Oluştur</h2>
