@@ -36,7 +36,6 @@ const ShowApplicants = () => {
   </tr>)
   const logOutHandler = () => {
     sessionStorage.removeItem('token');
-    sessionStorage.removeItem('token');
     toast.success('Admin oturumu kapatıldı', {
       position: "top-right",
       autoClose: 2000,
