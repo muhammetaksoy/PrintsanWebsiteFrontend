@@ -17,14 +17,11 @@ const Footer = () => {
                                 <strong>Email: </strong>info@printsan.com<br />
                             </p>
                             <div className={classes.socialLinks}>
-                                <a href="https://www.google.com" className="me-2">
+                                <a href="https://m.facebook.com/Printsan-Emprime-101424828716866/?ref=page_internal&mt_nav=0" className="me-2" target="_blank">
                                     <IoLogoFacebook className={classes.icon} />
                                 </a>
-                                <a href="https://www.google.com" className="me-2">
+                                <a href="https://www.instagram.com/printsanemprime/" className="me-2" target="_blank" >
                                     <IoLogoInstagram className={classes.icon} />
-                                </a>
-                                <a href="https://www.google.com" className="me-2">
-                                    <IoLogoYoutube className={classes.icon} />
                                 </a>
                             </div>
                         </div>
