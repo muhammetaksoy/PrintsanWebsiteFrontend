@@ -7,3 +7,9 @@
 .title:hover{
     color :#d9232d
 }
+
+.icon {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}

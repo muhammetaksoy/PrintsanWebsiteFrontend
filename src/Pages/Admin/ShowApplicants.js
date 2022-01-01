@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import classes from './CreatePosition.module.css';
+import {IoLogOutOutline} from "react-icons/io5";
 
 const ShowApplicants = () => {
     const token = getToken();
@@ -27,10 +28,14 @@ const ShowApplicants = () => {
     <td className="table-column-pl-0" style={{"paddingRight":"100px"}}>{item.FullName}</td>
     <td className="table-column-pl-0" style={{"paddingRight":"100px"}}>{item.PhoneNumber}</td>
     <td className="table-column-pl-0" style={{"paddingRight":"100px"}}>{item.Email}</td>
-    <td className="table-column-pl-0" style={{"paddingRight":"100px"}}>{item.AppliedDate}</td>
+    <td className="table-column-pl-0" style={{"paddingRight":"100px"}}>{item.CreatedOnStr}</td>
     <td className="table-column-pl-0" style={{"paddingRight":"100px"}}><a href={item.ResumeUrl} target="_blank" rel="noreferrer">Görüntülemek için tıklayın</a></td>
 
   </tr>)
+  const logOutHandler = () => {
+    sessionStorage.removeItem('token');
+    window.location.assign("http://localhost:3000/")
+  }
     return (
         <React.Fragment>
             <nav className="navbar navbar-expand-lg navbar-light bg-light px-5 "  >
@@ -40,6 +45,7 @@ const ShowApplicants = () => {
                 </a>
                 <a href='http://localhost:3000/BasvuruOlustur'  className={classes.title}>İş İlanı Oluştur</a>
                 <a href="http://localhost:3000/Admin" className={classes.title}>Admin Paneli</a>
+                <IoLogOutOutline className={classes.icon} onClick={logOutHandler}/>
                 </div>
             </nav>
             <h2 className="text-center container-fluid  p-2 alert alert-danger border-0 rounded-0 " style={{ "width": "85%","fontSize": "2.8rem" }}>İlan Başvuruları</h2>
