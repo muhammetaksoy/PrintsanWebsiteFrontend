@@ -21,6 +21,7 @@ import Admin from "Pages/Admin/Admin";
 import Login from "Pages/Login/Login";
 import CreatePosition from "Pages/Admin/CreatePosition";
 import ShowApplicants from "Pages/Admin/ShowApplicants";
+import ShowContact from "Pages/Admin/ShowContact";
 
 function setToken(userToken) {
   sessionStorage.setItem('token', JSON.stringify(userToken));
@@ -36,7 +37,7 @@ function App() {
   const token = getToken();
   return (
     <React.Fragment>
-      {!window.location.href.includes("Admin") && !window.location.href.includes("Login") && !window.location.href.includes("BasvuruOlustur") && !window.location.href.includes("Basvurular") && 
+      {!window.location.href.includes("Admin") && !window.location.href.includes("Login") && !window.location.href.includes("BasvuruOlustur") && !window.location.href.includes("Basvurular") && !window.location.href.includes("Mesajlar") && 
       <>
       <Header />
       <Routes>
@@ -74,6 +75,9 @@ function App() {
 
       <Routes>
         <Route path="Basvurular"  element={<ShowApplicants />}/>   
+      </Routes>
+      <Routes>
+        <Route path="Mesajlar"  element={<ShowContact />}/>   
       </Routes>
 
     </React.Fragment>

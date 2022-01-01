@@ -156,6 +156,7 @@ const CreatePosition = () => {
                         <img style={{ height: "90px", width: "220px" }} className="navbar-brand" alt="printsanlogo" src={require("../../images/printsanlogo.png").default} />
                     </a>
                     <a href='http://localhost:3000/Basvurular' className={classes.title}>Başvurular</a>
+                    <a href='http://localhost:3000/Mesajlar' className={classes.title}>Mesajlar</a>
                     <a href="http://localhost:3000/Admin" className={classes.title}>Admin Paneli</a>
                     <IoLogOutOutline className={classes.icon} onClick={logOutHandler}/>
                 </div>

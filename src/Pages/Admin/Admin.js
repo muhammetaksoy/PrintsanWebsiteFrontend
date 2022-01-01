@@ -327,6 +327,7 @@ const Admin = () => {
           </a>
           <a href='http://localhost:3000/BasvuruOlustur' className={classes.title}>İş İlanı Oluştur</a>
           <a href='http://localhost:3000/Basvurular' className={classes.title}>Başvurular</a>
+          <a href='http://localhost:3000/Mesajlar' className={classes.title}>Mesajlar</a>
           <a href='http://localhost:3000/Admin' className={classes.title}>Admin Paneli</a>
           <IoLogOutOutline className={classes.icon} onClick={logOutHandler}/>
 
